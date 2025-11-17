@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Eng.Mahran Abo Dakka</title>
+  <title >Eng. Mahran Abo Dakka | Software Engineer</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -26,8 +26,145 @@
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+  
+  <!-- Custom CSS for improvements -->
+  <style>
+    :root {
+      --primary-color: #3498db;
+      --secondary-color: #2c3e50;
+      --accent-color: #e74c3c;
+      --light-color: #ecf0f1;
+      --dark-color: #2c3e50;
+    }
+    
+    .hero {
+      background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+      background-size: cover;
+    }
+    
+    .hero img {
+      filter: brightness(0.7);
+      object-fit: cover;
+    }
+    
+    .section-title h2 {
+      position: relative;
+      padding-bottom: 15px;
+      margin-bottom: 30px;
+    }
+    
+    .section-title h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background: var(--primary-color);
+    }
+    
+    .skill-icon {
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: white;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      margin: 10px;
+      transition: transform 0.3s ease;
+    }
+    
+    .skill-icon:hover {
+      transform: translateY(-5px);
+    }
+    
+    .portfolio-item {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    
+    .portfolio-item:hover {
+      transform: translateY(-10px);
+    }
+    
+    .contact-info-item {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      margin-bottom: 20px;
+      transition: transform 0.3s ease;
+    }
+    
+    .contact-info-item:hover {
+      transform: translateY(-5px);
+    }
+    
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--primary-color);
+      color: white;
+      margin: 0 5px;
+      transition: all 0.3s ease;
+    }
+    
+    .social-links a:hover {
+      background: var(--secondary-color);
+      transform: translateY(-3px);
+    }
+    
+    .btn-primary {
+      background: var(--primary-color);
+      border: none;
+      padding: 10px 25px;
+      border-radius: 30px;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-primary:hover {
+      background: var(--secondary-color);
+      transform: translateY(-3px);
+    }
+    
+    .typed-cursor {
+      color: var(--accent-color);
+    }
+    
+    .navmenu a.active {
+      color: var(--primary-color);
+    }
+    
+    .footer {
+      background: var(--secondary-color);
+      color: white;
+    }
+  </style>
 
   <!-- =======================================================
   * Template Name: MyResume
@@ -60,21 +197,25 @@
   <main class="main">
 
     <!-- Hero Section -->
-    <section id="hero" class="hero section light-background">
+    <section id="hero" class="hero section">
 
-      <img src="assets/img/head.jpg" alt="">
+      <img src="assets/img/head.jpg" alt="Mahran Abo Dakka">
 
       <div class="container" data-aos="zoom-out">
         <div class="row justify-content-center">
-          <div class="col-lg-9">
-            <h2>Mahran Abo Dakka</h2>
-            <p>I'm <span class="typed" data-typed-items="Softwere engineer ">Softwere engineer</span><span
-                class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
-            <div class="social-links">
-              <!--<a href="#"><i class="bi bi-twitter-x"></i></a>-->
-              <a href="#"><i class="bi bi-facebook"></i></a>
-              <a href="#"><i class="bi bi-instagram"></i></a>
-              <a href="#"><i class="bi bi-linkedin"></i></a>
+          <div class="col-lg-9 text-center">
+            <h1 style="color: #ffffff;  ">Mahran Abo Dakka</h1>
+            <p>I'm <span class="typed" data-typed-items="Software Engineer, Web Developer, Problem Solver, Freelancer"></span><span
+                class="typed-cursor typed-cursor--blink" aria-hidden="true">|</span></p>
+            <div class="social-links mt-4 d-flex justify-content-center">
+              <a class="social-links mt-4 d-flex justify-content-center" href="https://www.facebook.com/people/Mahran-Tech/100068321951416/" target="_blank"><i  class="bi bi-facebook"></i></a>
+              <a class="social-links mt-4 d-flex justify-content-center" href="https://www.instagram.com/mahrantech/" target="_blank"><i class="bi bi-instagram"></i></a>
+              <a class="social-links mt-4 d-flex justify-content-center" href="https://www.linkedin.com/in/mahran-abo-dakka-2b6a43267/" target="_blank"><i class="bi bi-linkedin"></i></a>
+              <a class="social-links mt-4 d-flex justify-content-center" href="https://github.com/mhran971" target="_blank"><i class="bi bi-github"></i></a>
+            </div>
+            <div class="mt-4">
+              <a href="#contact" class="btn btn-primary me-3">Get In Touch</a>
+              <a href="#portfolio" class="btn btn-outline-light">View My Work</a>
             </div>
           </div>
         </div>
@@ -87,7 +228,7 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>About</h2>
+        <h2>About Me</h2>
         <p>I'm Mahran, a software engineering student passionate about building innovative software solutions that help
           solve real-world challenges. I work hard to develop my skills in (PHP, Laravel, Html, css, Javascript,
           graphQL, git,SQL queries), and I always strive to gain more knowledge in web development and mobile
@@ -98,39 +239,31 @@
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
         <div class="row gy-4 justify-content-center">
-          <div class="col-lg-4">
-            <img src="assets/img/portfolio.jpg" class="img-fluid" alt="">
+          <div class="col-lg-4 text-center">
+            <img src="assets/img/portfolio.jpg" class="img-fluid rounded-circle" alt="Mahran Abo Dakka">
           </div>
           <div class="col-lg-8 content">
-            <h2>Freelancer &amp; Web Developer.</h2>
-            <h2>
-              ________________________________________________________________
-
-
-
-            </h2>
-            <div class="row" style="margin-top: 30px;">
+            <h2>Freelancer &amp; Web Developer</h2>
+            <div class="row mt-4">
               <div class="col-lg-6">
                 <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>1 jun 2002</span></li>
-                  <!-- <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span>www.example.com</span></li> -->
+                  <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>1 Jun 2002</span></li>
                   <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+963 938 968 770</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Damascus , Syria</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Damascus, Syria</span></li>
                 </ul>
               </div>
               <div class="col-lg-6">
                 <ul>
                   <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>23</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Bachelor's </span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span> mhranabwdqt971@email.com</span>
-                  </li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Bachelor's</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>mhranabwdqt971@gmail.com</span></li>
                   <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
                 </ul>
               </div>
             </div>
-            <h2>
-              ________________________________________________________________
-            </h2>
+            <div class="mt-4">
+              <p>I'm constantly learning and improving my skills to stay up-to-date with the latest technologies and trends in software development. My goal is to create efficient, scalable, and user-friendly solutions that make a positive impact.</p>
+            </div>
           </div>
         </div>
 
@@ -138,606 +271,206 @@
 
     </section><!-- /About Section -->
 
-    <!-- Stats Section -->
-    <!-- <section id="stats" class="stats section">
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
-            <i class="bi bi-emoji-smile"></i>
-            <div class="stats-item">
-              <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Happy Clients</p>
-            </div>
-          </div> -->
-    <!-- End Stats Item -->
-
-    <!-- <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
-            <i class="bi bi-journal-richtext"></i>
-            <div class="stats-item">
-              <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Projects</p>
-            </div>
-          </div> -->
-    <!-- End Stats Item -->
-
-    <!-- <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
-            <i class="bi bi-headset"></i>
-            <div class="stats-item">
-              <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Hours Of Support</p>
-            </div>
-          </div> -->
-    <!-- End Stats Item -->
-
-    <!-- <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
-            <i class="bi bi-people"></i>
-            <div class="stats-item">
-              <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Hard Workers</p>
-            </div>
-          </div> -->
-    <!-- End Stats Item -->
-
-    </div>
-
-    </div>
-
-    </section><!-- /Stats Section -->
-
     <!-- Skills Section -->
     <section id="skills" class="skills section">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Skills</h2>
-        <p>“I always strive to develop my abilities in modern programming techniques to create effective and innovative
-          solutions.”</p>
+        <p>"I always strive to develop my abilities in modern programming techniques to create effective and innovative solutions."</p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-        <div style="display: flex; flex-direction: column;">
-          <div style="display: flex;">
-
-            <img
-              src="https://camo.githubusercontent.com/edd6a178ee6a4b30c0bf595da631485f25e8a863620e3efe386969cc11e70bc3/68747470733a2f2f7374617469632e7769787374617469632e636f6d2f6d656469612f6262653634325f36323431346535306265663334636532386462316166616266353566313765637e6d76322e676966"
-              alt="coding"
-              data-canonical-src="https://static.wixstatic.com/media/bbe642_62414e50bef34ce28db1afabf55f17ec~mv2.gif"
-              style="width: 400px;height: 400px; border-radius: 50px; margin-left: 0px; margin-right: 150px;" data-target="animated-image.originalImage">
-
-            <div class="order-1 order-lg-2 col-lg-6">
-              <h3 class="react-reveal h3 mb-2"
-                style="animation-fill-mode: both; animation-duration: 2000ms; animation-delay: 0ms; animation-iteration-count: 1; opacity: 1; animation-name: react-reveal-123745734981279-2;">
-                Front End Development</h3>
-              <div class="react-reveal d-flex justify-content-center flex-wrap mb-2"
-                style="animation-fill-mode: both; animation-duration: 2000ms; animation-delay: 0ms; animation-iteration-count: 1; opacity: 1; animation-name: react-reveal-123745734981279-2;">
-                <div class="icon icon-lg icon-shape shadow-sm rounded-circle m-1" id="HTML-5"><svg
-                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
-                    role="img" data-inline="false" class="iconify iconify--vscode-icons" width="1em" height="1em"
-                    viewBox="0 0 32 32">
-                    <path fill="#e44f26" d="M5.902 27.201L3.655 2h24.69l-2.25 25.197L15.985 30z"></path>
-                    <path fill="#f1662a" d="m16 27.858l8.17-2.265l1.922-21.532H16z"></path>
-                    <path fill="#ebebeb"
-                      d="M16 13.407h-4.09l-.282-3.165H16V7.151H8.25l.074.83l.759 8.517H16zm0 8.027l-.014.004l-3.442-.929l-.22-2.465H9.221l.433 4.852l6.332 1.758l.014-.004z">
-                    </path>
-                    <path fill="#fff"
-                      d="M15.989 13.407v3.091h3.806l-.358 4.009l-3.448.93v3.216l6.337-1.757l.046-.522l.726-8.137l.076-.83zm0-6.256v3.091h7.466l.062-.694l.141-1.567l.074-.83z">
-                    </path>
-                  </svg></div>
-                <div class="icon icon-lg icon-shape shadow-sm rounded-circle m-1" id="CSS-3"><svg
-                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
-                    role="img" data-inline="false" class="iconify iconify--vscode-icons" width="1em" height="1em"
-                    viewBox="0 0 32 32">
-                    <path fill="#639"
-                      d="M1.995 1.994h23.52a4.48 4.48 0 0 1 4.48 4.48v19.04a4.48 4.48 0 0 1-4.48 4.48H6.475a4.48 4.48 0 0 1-4.48-4.48Z">
-                    </path>
-                    <path fill="#fff"
-                      d="M9.079 24.87v-4.704c0-1.876 1.204-2.884 3.024-2.884c1.792-.028 2.912 1.148 2.856 3.136h-2.072c.056-.756-.28-1.316-.84-1.288c-.7 0-.896.476-.896 1.372v4.088c0 .868.28 1.288.896 1.316c.644 0 .896-.644.84-1.372h2.072c.112 2.044-1.176 3.248-2.996 3.22c-1.764 0-2.884-.98-2.884-2.884m6.636-.336h1.932c.028.896.308 1.456.924 1.456s.84-.364.84-1.204c0-.7-.308-1.092-1.064-1.456l-.728-.336c-1.288-.616-1.82-1.372-1.82-2.884c0-1.68 1.064-2.856 2.8-2.856s2.66 1.204 2.688 3.164h-1.876c0-.812-.168-1.372-.784-1.372c-.56 0-.84.28-.84.98s.252.98.924 1.26l.672.308c1.428.672 2.044 1.54 2.044 3.164c0 1.932-1.092 2.996-2.884 2.996s-2.8-1.232-2.828-3.22m6.328 0h1.96c0 .896.308 1.456.896 1.456s.84-.364.84-1.204c0-.7-.28-1.092-1.064-1.456l-.728-.336c-1.288-.616-1.792-1.372-1.792-2.884c0-1.68 1.036-2.856 2.8-2.856s2.632 1.204 2.688 3.164h-1.876c-.028-.812-.196-1.372-.812-1.372c-.56 0-.812.28-.812.98s.224.98.896 1.26l.7.308c1.4.672 2.016 1.54 2.016 3.164c0 1.932-1.092 2.996-2.884 2.996s-2.8-1.232-2.828-3.22">
-                    </path>
-                  </svg></div>
-                <div class="icon icon-lg icon-shape shadow-sm rounded-circle m-1" id="JavaScript"><svg
-                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
-                    role="img" data-inline="false" class="iconify iconify--logos" width="1em" height="1em"
-                    viewBox="0 0 256 256">
-                    <path fill="#F7DF1E" d="M0 0h256v256H0z"></path>
-                    <path
-                      d="m67.312 213.932l19.59-11.856c3.78 6.701 7.218 12.371 15.465 12.371c7.905 0 12.89-3.092 12.89-15.12v-81.798h24.057v82.138c0 24.917-14.606 36.259-35.916 36.259c-19.245 0-30.416-9.967-36.087-21.996m85.07-2.576l19.588-11.341c5.157 8.421 11.859 14.607 23.715 14.607c9.969 0 16.325-4.984 16.325-11.858c0-8.248-6.53-11.17-17.528-15.98l-6.013-2.58c-17.357-7.387-28.87-16.667-28.87-36.257c0-18.044 13.747-31.792 35.228-31.792c15.294 0 26.292 5.328 34.196 19.247l-18.732 12.03c-4.125-7.389-8.591-10.31-15.465-10.31c-7.046 0-11.514 4.468-11.514 10.31c0 7.217 4.468 10.14 14.778 14.608l6.014 2.577c20.45 8.765 31.963 17.7 31.963 37.804c0 21.654-17.012 33.51-39.867 33.51c-22.339 0-36.774-10.654-43.819-24.574">
-                    </path>
-                  </svg></div>
-                <div class="icon icon-lg icon-shape shadow-sm rounded-circle m-1" id="Bootstrap"><svg
-                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
-                    role="img" data-inline="false" class="iconify iconify--logos" width="1.26em" height="1em"
-                    viewBox="0 0 256 204">
-                    <path fill="#7E13F8"
-                      d="M53.172 0C38.565 0 27.756 12.785 28.24 26.65c.465 13.32-.139 30.573-4.482 44.642C19.402 85.402 12.034 94.34 0 95.488v12.956c12.034 1.148 19.402 10.086 23.758 24.197c4.343 14.069 4.947 31.32 4.482 44.641c-.484 13.863 10.325 26.65 24.934 26.65h149.673c14.608 0 25.414-12.785 24.93-26.65c-.464-13.32.139-30.572 4.482-44.641c4.359-14.11 11.707-23.05 23.741-24.197V95.488c-12.034-1.148-19.382-10.086-23.74-24.196c-4.344-14.067-4.947-31.321-4.483-44.642C228.261 12.787 217.455 0 202.847 0H53.17zM173.56 125.533c0 19.092-14.24 30.67-37.872 30.67h-40.23a4.34 4.34 0 0 1-4.338-4.339V52.068a4.34 4.34 0 0 1 4.339-4.34h39.999c19.705 0 32.637 10.675 32.637 27.063c0 11.503-8.7 21.801-19.783 23.604v.601c15.089 1.655 25.248 12.104 25.248 26.537m-42.26-64.05h-22.937v32.4h19.32c14.934 0 23.17-6.014 23.17-16.764c0-10.073-7.082-15.636-19.552-15.636m-22.937 45.256v35.705h23.782c15.548 0 23.786-6.239 23.786-17.965c0-11.728-8.467-17.742-24.786-17.742h-22.782z">
-                    </path>
-                  </svg></div>
-                <div class="icon icon-lg icon-shape shadow-sm rounded-circle m-1" id="Reactjs"><svg
-                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
-                    role="img" data-inline="false" class="iconify iconify--vscode-icons" width="1em" height="1em"
-                    viewBox="0 0 32 32">
-                    <circle cx="16" cy="15.974" r="2.5" fill="#00d8ff"></circle>
-                    <path fill="#00d8ff"
-                      d="M16 21.706a28.4 28.4 0 0 1-8.88-1.2a11.3 11.3 0 0 1-3.657-1.958A3.54 3.54 0 0 1 2 15.974c0-1.653 1.816-3.273 4.858-4.333A28.8 28.8 0 0 1 16 10.293a28.7 28.7 0 0 1 9.022 1.324a11.4 11.4 0 0 1 3.538 1.866A3.4 3.4 0 0 1 30 15.974c0 1.718-2.03 3.459-5.3 4.541a28.8 28.8 0 0 1-8.7 1.191m0-10.217a28 28 0 0 0-8.749 1.282c-2.8.977-4.055 2.313-4.055 3.2c0 .928 1.349 2.387 4.311 3.4A27.2 27.2 0 0 0 16 20.51a27.6 27.6 0 0 0 8.325-1.13C27.4 18.361 28.8 16.9 28.8 15.974a2.33 2.33 0 0 0-1.01-1.573a10.2 10.2 0 0 0-3.161-1.654A27.5 27.5 0 0 0 16 11.489">
-                    </path>
-                    <path fill="#00d8ff"
-                      d="M10.32 28.443a2.64 2.64 0 0 1-1.336-.328c-1.432-.826-1.928-3.208-1.327-6.373a28.8 28.8 0 0 1 3.4-8.593a28.7 28.7 0 0 1 5.653-7.154a11.4 11.4 0 0 1 3.384-2.133a3.4 3.4 0 0 1 2.878 0c1.489.858 1.982 3.486 1.287 6.859a28.8 28.8 0 0 1-3.316 8.133a28.4 28.4 0 0 1-5.476 7.093a11.3 11.3 0 0 1-3.523 2.189a4.9 4.9 0 0 1-1.624.307m1.773-14.7a28 28 0 0 0-3.26 8.219c-.553 2.915-.022 4.668.75 5.114c.8.463 2.742.024 5.1-2.036a27.2 27.2 0 0 0 5.227-6.79a27.6 27.6 0 0 0 3.181-7.776c.654-3.175.089-5.119-.713-5.581a2.33 2.33 0 0 0-1.868.089A10.2 10.2 0 0 0 17.5 6.9a27.5 27.5 0 0 0-5.4 6.849Z">
-                    </path>
-                    <path fill="#00d8ff"
-                      d="M21.677 28.456c-1.355 0-3.076-.82-4.868-2.361a28.8 28.8 0 0 1-5.747-7.237a28.7 28.7 0 0 1-3.374-8.471a11.4 11.4 0 0 1-.158-4A3.4 3.4 0 0 1 8.964 3.9c1.487-.861 4.01.024 6.585 2.31a28.8 28.8 0 0 1 5.39 6.934a28.4 28.4 0 0 1 3.41 8.287a11.3 11.3 0 0 1 .137 4.146a3.54 3.54 0 0 1-1.494 2.555a2.6 2.6 0 0 1-1.315.324m-9.58-10.2a28 28 0 0 0 5.492 6.929c2.249 1.935 4.033 2.351 4.8 1.9c.8-.465 1.39-2.363.782-5.434A27.2 27.2 0 0 0 19.9 13.74a27.6 27.6 0 0 0-5.145-6.64c-2.424-2.152-4.39-2.633-5.191-2.169a2.33 2.33 0 0 0-.855 1.662a10.2 10.2 0 0 0 .153 3.565a27.5 27.5 0 0 0 3.236 8.1Z">
-                    </path>
-                  </svg></div>
-                <div class="icon icon-lg icon-shape shadow-sm rounded-circle m-1" id="Nextjs"><svg
-                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
-                    role="img" data-inline="false" class="iconify iconify--vscode-icons" width="1em" height="1em"
-                    viewBox="0 0 32 32">
-                    <defs>
-                      <linearGradient id="iconifyReact0" x1="336.1" x2="414.1" y1="522.5" y2="652.6"
-                        gradientTransform="translate(-8.06 -1.06)scale(.055)" gradientUnits="userSpaceOnUse">
-                        <stop offset="0" stop-color="#fff"></stop>
-                        <stop offset="1" stop-color="#fff" stop-opacity="0"></stop>
-                      </linearGradient>
-                      <linearGradient id="iconifyReact1" x1="511.1" x2="511.1" y1="209.5" y2="359.9"
-                        gradientTransform="translate(-8.06 -1.06)scale(.055)" gradientUnits="userSpaceOnUse">
-                        <stop offset="0" stop-color="#fff"></stop>
-                        <stop offset="1" stop-color="#fff" stop-opacity="0"></stop>
-                      </linearGradient>
-                    </defs>
-                    <circle cx="16" cy="16" r="14"></circle>
-                    <path fill="url(#iconifyReact0)"
-                      d="m25.26 26.5l-12.5-16.1H10.4v11.2h1.89v-8.8l11.49 14.84c.52-.35 1-.72 1.48-1.13z"></path>
-                    <path fill="url(#iconifyReact1)" d="M19.89 10.4h1.86v11.2H19.9z"></path>
-                  </svg></div>
-                <div class="icon icon-lg icon-shape shadow-sm rounded-circle m-1" id="Redux"><svg
-                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
-                    role="img" data-inline="false" class="iconify iconify--logos" width="1.05em" height="1em"
-                    viewBox="0 0 256 244">
-                    <path fill="#764ABC"
-                      d="M177.381 169.733c9.447-.978 16.614-9.122 16.288-18.896c-.325-9.773-8.47-17.592-18.243-17.592h-.651c-10.1.326-17.918 8.796-17.592 18.895c.326 4.887 2.28 9.122 5.212 12.054c-11.076 21.828-28.016 37.791-53.426 51.148c-17.266 9.122-35.183 12.38-53.1 10.1c-14.66-1.955-26.062-8.47-33.23-19.222c-10.424-15.963-11.401-33.23-2.605-50.496c6.19-12.38 15.962-21.502 22.152-26.063c-1.303-4.235-3.258-11.402-4.235-16.614c-47.237 34.207-42.35 80.468-28.016 102.295c10.75 16.29 32.577 26.389 56.684 26.389c6.515 0 13.03-.652 19.546-2.28c41.699-8.145 73.299-32.905 91.216-69.718m57.336-40.397c-24.759-28.995-61.245-44.958-102.944-44.958h-5.212c-2.932-5.864-9.122-9.774-15.963-9.774h-.652C99.848 74.93 92.03 83.4 92.355 93.5c.326 9.773 8.47 17.592 18.243 17.592h.651c7.167-.326 13.357-4.887 15.963-11.077h5.864c24.759 0 48.214 7.167 69.39 21.176c16.288 10.751 28.016 24.76 34.531 41.7c5.538 13.683 5.212 27.04-.652 38.443c-9.121 17.266-24.432 26.714-44.63 26.714c-13.031 0-25.41-3.91-31.926-6.842c-3.583 3.258-10.099 8.47-14.66 11.729c14.009 6.515 28.343 10.099 42.025 10.099c31.274 0 54.404-17.267 63.2-34.533c9.447-18.896 8.795-51.474-15.637-79.165M69.225 175.27c.326 9.774 8.47 17.592 18.243 17.592h.652c10.099-.325 17.917-8.796 17.591-18.895c-.325-9.774-8.47-17.592-18.243-17.592h-.651c-.652 0-1.63 0-2.28.325c-13.357-22.153-18.895-46.26-16.94-72.323c1.302-19.547 7.818-36.488 19.22-50.497c9.447-12.054 27.69-17.918 40.07-18.243c34.531-.652 49.19 42.351 50.168 59.618c4.235.977 11.402 3.258 16.289 4.887C189.434 27.366 156.857 0 125.584 0c-29.32 0-56.359 21.176-67.11 52.451c-14.985 41.7-5.212 81.771 13.031 113.372c-1.628 2.28-2.606 5.864-2.28 9.448">
-                    </path>
-                  </svg></div>
-                <div class="icon icon-lg icon-shape shadow-sm rounded-circle m-1" id="NPM"><svg
-                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
-                    role="img" data-inline="false" class="iconify iconify--logos" width="1em" height="1em"
-                    viewBox="0 0 256 256">
-                    <path fill="#C12127" d="M0 256V0h256v256z"></path>
-                    <path fill="#FFF" d="M48 48h160v160h-32V80h-48v128H48z"></path>
-                  </svg></div>
+        <div class="row mb-5">
+          <div class="col-lg-6">
+            <h3 class="mb-4">Frontend Development</h3>
+            <div class="d-flex flex-wrap mb-4">
+              <div class="skill-icon">
+                <i class="bi bi-filetype-html" style="font-size: 1.5rem; color: #e44f26;"></i>
               </div>
-              <div class="react-reveal"
-                style="animation-fill-mode: both; animation-duration: 2000ms; animation-delay: 0ms; animation-iteration-count: 1; opacity: 1; animation-name: react-reveal-123745734981279-2;">
-                <p><img alt="⚡" draggable="false" src="//cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/26a1.png"
-                    style="height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-0.1em"> Building responsive SPA in
-                  React.js &amp; Next.js</p>
-                <p><img alt="⚡" draggable="false" src="//cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/26a1.png"
-                    style="height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-0.1em"> Building Dashboards using
-                  React.js</p>
-                <p><img alt="⚡" draggable="false" src="//cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/26a1.png"
-                    style="height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-0.1em"> Dealing with API requests
-                </p>
+              <div class="skill-icon">
+                <i class="bi bi-filetype-css" style="font-size: 1.5rem; color: #264de4;"></i>
+              </div>
+              <div class="skill-icon">
+                <i class="bi bi-filetype-js" style="font-size: 1.5rem; color: #f7df1e;"></i>
+              </div>
+              <div class="skill-icon">
+                <i class="bi bi-bootstrap" style="font-size: 1.5rem; color: #7952b3;"></i>
+              </div>
+              <div class="skill-icon">
+                <i class="bi bi-react" style="font-size: 1.5rem; color: #61dafb;"></i>
               </div>
             </div>
-
+            <ul class="list-unstyled">
+              <li><i class="bi bi-arrow-right-short text-primary"></i> Building responsive SPAs in React.js & Next.js</li>
+              <li><i class="bi bi-arrow-right-short text-primary"></i> Building Dashboards using React.js</li>
+              <li><i class="bi bi-arrow-right-short text-primary"></i> Dealing with API requests</li>
+            </ul>
+          </div>
+          <div class="col-lg-6">
+            <img src="https://developers.giphy.com/branch/master/static/api-512d36c09662682717108a38bbb5c57d.gif" class="img-fluid rounded" alt="Frontend Development">
           </div>
         </div>
-        <div class="my-5 row">
-          <div class="order-2 order-lg-1 col-lg-6">
-            <div class="react-reveal"
-              style="animation-fill-mode: both; animation-duration: 2000ms; animation-delay: 0ms; animation-iteration-count: 1; opacity: 1; animation-name: react-reveal-123745734981279-1;">
-              <div style="display: flex; flex-direction: row;">
-                <div>
-                  <img style="width: 400px;height: 400px; border-radius: 50px; margin-left: 0px; margin-right: 150px;" alt=""
-                    src="https://developers.giphy.com/branch/master/static/api-512d36c09662682717108a38bbb5c57d.gif"
-                    >
-                </div>
 
-
-                <div class="order-1 order-lg-2 col-lg-6">
-                  <h3 class="react-reveal h3 mb-2"
-                    style="animation-fill-mode: both; animation-duration: 2000ms; animation-delay: 0ms; animation-iteration-count: 1; opacity: 1; animation-name: react-reveal-123745734981279-2;">
-                    Back End Development</h3>
-                  <div class="react-reveal d-flex justify-content-center flex-wrap mb-2"
-                    style="animation-fill-mode: both; animation-duration: 2000ms; animation-delay: 0ms; animation-iteration-count: 1; opacity: 1; animation-name: react-reveal-123745734981279-2;">
-                    <div class="icon icon-lg icon-shape shadow-sm rounded-circle m-1" id="Laravel"><svg
-                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
-                        role="img" data-inline="false" class="iconify iconify--logos" width="0.97em" height="1em"
-                        viewBox="0 0 256 264">
-                        <path fill="#FF2D20"
-                          d="M255.856 59.62c.095.351.144.713.144 1.077v56.568c0 1.478-.79 2.843-2.073 3.578L206.45 148.18v54.18a4.14 4.14 0 0 1-2.062 3.579l-99.108 57.053c-.227.128-.474.21-.722.299c-.093.03-.18.087-.278.113a4.15 4.15 0 0 1-2.114 0c-.114-.03-.217-.093-.325-.134c-.227-.083-.464-.155-.68-.278L2.073 205.938A4.13 4.13 0 0 1 0 202.36V32.656c0-.372.052-.733.144-1.083c.031-.119.103-.227.145-.346c.077-.216.15-.438.263-.639c.077-.134.19-.242.283-.366c.119-.165.227-.335.366-.48c.119-.118.274-.206.408-.309c.15-.124.283-.258.453-.356h.005L51.613.551a4.14 4.14 0 0 1 4.125 0l49.546 28.526h.01c.165.104.305.232.454.351c.134.103.284.196.402.31c.145.149.248.32.371.484c.088.124.207.232.279.366c.118.206.185.423.268.64c.041.118.113.226.144.35c.095.351.144.714.145 1.078V138.65l41.286-23.773V60.692c0-.36.052-.727.145-1.072c.036-.124.103-.232.144-.35c.083-.217.155-.44.268-.64c.077-.134.19-.242.279-.366c.123-.165.226-.335.37-.48c.12-.118.269-.206.403-.309c.155-.124.289-.258.454-.356h.005l49.551-28.526a4.13 4.13 0 0 1 4.125 0l49.546 28.526c.175.103.309.232.464.35c.128.104.278.197.397.31c.144.15.247.32.37.485c.094.124.207.232.28.366c.118.2.185.423.267.64c.047.118.114.226.145.35m-8.115 55.258v-47.04l-17.339 9.981l-23.953 13.792v47.04l41.297-23.773zm-49.546 85.095V152.9l-23.562 13.457l-67.281 38.4v47.514zM8.259 39.796v160.177l90.833 52.294v-47.505L51.64 177.906l-.015-.01l-.02-.01c-.16-.093-.295-.227-.444-.34c-.13-.104-.279-.186-.392-.3l-.01-.015c-.134-.129-.227-.289-.34-.433c-.104-.14-.227-.258-.31-.402l-.005-.016c-.093-.154-.15-.34-.217-.515c-.067-.155-.154-.3-.196-.464v-.005c-.051-.196-.061-.403-.082-.604c-.02-.154-.062-.309-.062-.464V63.57L25.598 49.772l-17.339-9.97zM53.681 8.893L12.399 32.656l41.272 23.762L94.947 32.65L53.671 8.893zm21.468 148.298l23.948-13.786V39.796L81.76 49.778L57.805 63.569v103.608zM202.324 36.935l-41.276 23.762l41.276 23.763l41.271-23.768zm-4.13 54.676l-23.953-13.792l-17.338-9.981v47.04l23.948 13.787l17.344 9.986zm-94.977 106.006l60.543-34.564l30.264-17.272l-41.246-23.747l-47.489 27.34l-43.282 24.918z">
-                        </path>
-                      </svg></div>
-                    <div class="icon icon-lg icon-shape shadow-sm rounded-circle m-1" id="ExpressJs"><svg
-                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
-                        role="img" data-inline="false" class="iconify iconify--skill-icons" width="1em" height="1em"
-                        viewBox="0 0 256 256">
-                        <g fill="none">
-                          <rect width="256" height="256" fill="#F4F2ED" rx="60"></rect>
-                          <path fill="#0F0F0F"
-                            d="M228 182.937a12.73 12.73 0 0 1-15.791-6.005c-9.063-13.567-19.071-26.522-28.69-39.755l-4.171-5.56c-11.454 15.346-22.908 30.08-33.361 45.371a12.23 12.23 0 0 1-15.012 5.894l42.98-57.659l-39.978-52.1a13.29 13.29 0 0 1 15.847 5.56c9.285 13.568 19.572 26.523 29.802 40.257c10.287-13.623 20.462-26.634 29.97-40.09a11.95 11.95 0 0 1 14.901-5.56l-15.513 20.573c-6.95 9.174-13.789 18.404-21.017 27.356a5.56 5.56 0 0 0 0 8.285c13.289 17.626 26.466 35.307 40.033 53.433M28 124.5c1.168-5.56 1.89-11.621 3.503-17.292c9.619-34.195 48.818-48.43 75.785-27.245c15.791 12.4 19.739 29.97 18.961 49.764H37.286c-1.446 35.363 24.075 56.714 56.713 45.816a33.86 33.86 0 0 0 21.518-23.965c1.724-5.56 4.504-6.505 9.786-4.893a45.15 45.15 0 0 1-21.573 32.972a52.26 52.26 0 0 1-60.884-7.784a54.77 54.77 0 0 1-13.678-32.138c0-1.89-.723-3.781-1.112-5.56A861 861 0 0 1 28 124.5m9.397-2.391h80.456c-.501-25.632-16.681-43.814-38.254-43.98c-24.02-.334-41.201 17.458-42.258 43.869z">
-                          </path>
-                        </g>
-                      </svg></div>
-                    <div class="icon icon-lg icon-shape shadow-sm rounded-circle m-1" id="Python"><svg
-                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
-                        role="img" data-inline="false" class="iconify iconify--logos" width="1.01em" height="1em"
-                        viewBox="0 0 256 255">
-                        <defs>
-                          <linearGradient id="iconifyReact2" x1="12.959%" x2="79.639%" y1="12.039%" y2="78.201%">
-                            <stop offset="0%" stop-color="#387EB8"></stop>
-                            <stop offset="100%" stop-color="#366994"></stop>
-                          </linearGradient>
-                          <linearGradient id="iconifyReact3" x1="19.128%" x2="90.742%" y1="20.579%" y2="88.429%">
-                            <stop offset="0%" stop-color="#FFE052"></stop>
-                            <stop offset="100%" stop-color="#FFC331"></stop>
-                          </linearGradient>
-                        </defs>
-                        <path fill="url(#iconifyReact2)"
-                          d="M126.916.072c-64.832 0-60.784 28.115-60.784 28.115l.072 29.128h61.868v8.745H41.631S.145 61.355.145 126.77c0 65.417 36.21 63.097 36.21 63.097h21.61v-30.356s-1.165-36.21 35.632-36.21h61.362s34.475.557 34.475-33.319V33.97S194.67.072 126.916.072M92.802 19.66a11.12 11.12 0 0 1 11.13 11.13a11.12 11.12 0 0 1-11.13 11.13a11.12 11.12 0 0 1-11.13-11.13a11.12 11.12 0 0 1 11.13-11.13">
-                        </path>
-                        <path fill="url(#iconifyReact3)"
-                          d="M128.757 254.126c64.832 0 60.784-28.115 60.784-28.115l-.072-29.127H127.6v-8.745h86.441s41.486 4.705 41.486-60.712c0-65.416-36.21-63.096-36.21-63.096h-21.61v30.355s1.165 36.21-35.632 36.21h-61.362s-34.475-.557-34.475 33.32v56.013s-5.235 33.897 62.518 33.897m34.114-19.586a11.12 11.12 0 0 1-11.13-11.13a11.12 11.12 0 0 1 11.13-11.131a11.12 11.12 0 0 1 11.13 11.13a11.12 11.12 0 0 1-11.13 11.13">
-                        </path>
-                      </svg></div>
-                    <div class="icon icon-lg icon-shape shadow-sm rounded-circle m-1" id="Django"><svg
-                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
-                        role="img" data-inline="false" class="iconify iconify--vscode-icons" width="1em" height="1em"
-                        viewBox="0 0 32 32">
-                        <path fill="#44b78b"
-                          d="M14.135 4H18.1v18.169a26 26 0 0 1-5.143.535c-4.842-.005-7.362-2.168-7.362-6.322c0-4 2.673-6.6 6.816-6.6a6.5 6.5 0 0 1 1.724.2zm0 9.142a4 4 0 0 0-1.337-.2c-2 0-3.163 1.223-3.163 3.366c0 2.087 1.107 3.239 3.138 3.239a9 9 0 0 0 1.362-.1v-6.3Z">
-                        </path>
-                        <path fill="#44b78b"
-                          d="M24.4 10.059v9.1c0 3.133-.235 4.639-.923 5.938A6.32 6.32 0 0 1 20.237 28l-3.678-1.733a5.7 5.7 0 0 0 3.141-2.629c.566-1.121.745-2.42.745-5.837v-7.742ZM20.441 4.02h3.964v4.028h-3.964z">
-                        </path>
-                      </svg></div>
-                    <div class="icon icon-lg icon-shape shadow-sm rounded-circle m-1" id="GithubActions"><svg
-                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
-                        role="img" data-inline="false" class="iconify iconify--logos" width="1em" height="1em"
-                        viewBox="0 0 256 256">
-                        <path fill="#4A7EBF"
-                          d="M53.604 0c29.604 0 53.604 23.992 53.604 53.59c0 29.09-23.189 52.75-52.093 53.553c0 2.461.109 7.111 1.501 9.92c1.933 3.893 13.525 11.144 24.892 11.144h4.084c2.567-18.271 18.257-32.332 37.24-32.332c18.906 0 34.55 13.946 37.211 32.11h21.13c2.661-18.164 18.304-32.11 37.21-32.11c20.775 0 37.617 16.837 37.617 37.607s-16.842 37.606-37.617 37.606c-18.906 0-34.55-13.948-37.21-32.11h-21.129c-2.66 18.162-18.305 32.11-37.212 32.11c-18.87 0-34.494-13.893-37.199-32.007l-4.515.135c-7.435-.056-15.29-2.042-21.598-6.328c-1.72-1.169-3.415-2.397-5.182-3.56v2.441c-.01.79-.153 12.657-.164 25.833v2.79c.005 8.641.073 17.545.277 24.04c.446 14.246 12.034 25.745 24.822 28.436c1.663.35 4.52.394 6.321.238c2.571-18.264 18.26-32.32 37.238-32.32c20.774 0 37.616 16.838 37.616 37.607c0 20.77-16.842 37.607-37.616 37.607c-18.769 0-34.323-13.744-37.153-31.714h-3.254c-24.436-1.334-39.628-23.746-39.363-41.923c.334-22.877.082-45.764.079-68.646v-7.565C18.546 101.286 0 79.606 0 53.591C0 23.992 23.999 0 53.604 0m69.228 191.78c-14.701 0-26.62 11.915-26.62 26.613s11.919 26.614 26.62 26.614s26.62-11.915 26.62-26.614c0-14.698-11.918-26.614-26.62-26.614m0-84.912c-14.701 0-26.62 11.915-26.62 26.614c0 14.697 11.919 26.613 26.62 26.613s26.62-11.916 26.62-26.613c0-14.699-11.918-26.614-26.62-26.614m95.551 0c-14.702 0-26.62 11.915-26.62 26.614c0 14.697 11.918 26.613 26.62 26.613s26.621-11.916 26.621-26.613c0-14.699-11.918-26.614-26.62-26.614m15.161 15.408a5.496 5.496 0 0 1 .17 7.606l-.16.168l-16.31 16.345a5.5 5.5 0 0 1-7.576.198l-.172-.163l-7.985-7.86a5.496 5.496 0 0 1-.06-7.773a5.5 5.5 0 0 1 7.606-.22l.168.16l4.092 4.027l12.452-12.477a5.5 5.5 0 0 1 7.775-.01m-95.99-.08a5.497 5.497 0 0 1 .17 7.606l-.16.168l-16.31 16.344a5.5 5.5 0 0 1-7.576.198l-.172-.163l-7.985-7.86a5.498 5.498 0 0 1 7.546-7.992l.168.16l4.093 4.027l12.451-12.478a5.5 5.5 0 0 1 7.775-.01M53.604 10.993c-23.532 0-42.608 19.07-42.608 42.598c0 23.525 19.076 42.597 42.608 42.597s42.608-19.072 42.608-42.597c0-23.527-19.076-42.598-42.608-42.598M49.171 28.13A744 744 0 0 1 75.7 44.841c7.308 4.82 7.29 13.563-.1 18.394a609 609 0 0 1-27.058 16.712c-7.455 4.34-15.8-.65-16.002-9.344c-.13-5.602-.024-11.21-.032-16.817c-.006-5.454-.113-10.911.019-16.363c.222-9.248 8.736-14.066 16.643-9.293m-5.91 8.872v3.868l-.001 5.674l-.001 3.71v5.482c0 4.23.002 8.394.01 12.557c.003 1.96 1.023 1.88 2.343 1.063q11.408-7.071 22.827-14.127c1.258-.776 1.294-1.587.06-2.365c-8.154-5.139-16.318-10.26-25.238-15.862">
-                        </path>
-                        <path fill="#85B3DF"
-                          d="M133.227 223.88a5.497 5.497 0 1 0 .001-10.996a5.497 5.497 0 0 0 0 10.995m-21.049.001a5.497 5.497 0 1 0 0-10.996a5.497 5.497 0 0 0 0 10.995m106.205 21.128c-14.702 0-26.62-11.915-26.62-26.614c0-14.698 11.918-26.614 26.62-26.614c14.701 0 26.62 11.916 26.62 26.614s-11.919 26.614-26.62 26.614m0-64.22c-18.906 0-34.55 13.947-37.211 32.11h-6.153c-2.685 0-4.864 2.461-4.864 5.496s2.179 5.497 4.864 5.497h6.153c2.66 18.163 18.305 32.11 37.21 32.11C239.159 256 256 239.162 256 218.393c0-20.77-16.842-37.607-37.616-37.607">
-                        </path>
-                      </svg></div>
-                  </div>
-                  <div class="react-reveal"
-                    style="animation-fill-mode: both; animation-duration: 2000ms; animation-delay: 0ms; animation-iteration-count: 1; opacity: 1; animation-name: react-reveal-123745734981279-2;">
-                    <p><img alt="⚡" draggable="false"
-                        src="//cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/26a1.png"
-                        style="height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-0.1em"> Experience of working
-                      on
-                      multiple Backend Frameworks</p>
-                    <p><img alt="⚡" draggable="false"
-                        src="//cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/26a1.png"
-                        style="height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-0.1em"> Building API endPoints
-                      and
-                      ensure the level of safety and quality</p>
-                    <p><img alt="⚡" draggable="false"
-                        src="//cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/26a1.png"
-                        style="height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-0.1em"> Hosting and
-                      maintaining
-                      websites on virtual machine instances along with integration of databases</p>
-                    <p><img alt="⚡" draggable="false"
-                        src="//cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/26a1.png"
-                        style="height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-0.1em"> Building CI/CD
-                      pipelines
-                      for automated testing &amp; deployment using Github Actions Or GitLab</p>
-                  </div>
-                </div>
+        <div class="row mb-5">
+          <div class="col-lg-6 order-lg-2">
+            <h3 class="mb-4">Backend Development</h3>
+            <div class="d-flex flex-wrap mb-4">
+              <div class="skill-icon">
+                <i class="bi bi-filetype-php" style="font-size: 1.5rem; color: #777bb4;"></i>
+              </div>
+              <div class="skill-icon">
+                <i class="bi bi-filetype-json" style="font-size: 1.5rem; color: #000;"></i>
+              </div>
+              <div class="skill-icon">
+                <i class="bi bi-database" style="font-size: 1.5rem; color: #336791;"></i>
+              </div>
+              <div class="skill-icon">
+                <i class="bi bi-graph-up" style="font-size: 1.5rem; color: #e10098;"></i>
               </div>
             </div>
-            <div class="my-5 row">
-              <div class="order-2 order-lg-1 col-lg-6">
-                <div class="react-reveal"
-                  style="animation-fill-mode: both; animation-duration: 2000ms; animation-delay: 0ms; animation-iteration-count: 1; opacity: 1; animation-name: react-reveal-123745734981279-1;">
-                  <div>
-                    <div style="width:100%;height:100%;overflow:hidden;margin:0 auto;outline:none" title=""
-                      role="button" aria-label="animation" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 750 600" width="750" height="600"
-                        style="width: 100%; height: 100%; transform: translate3d(0px, 0px, 0px);"
-                        preserveAspectRatio="xMidYMid meet">
-
-
-                      </svg></div>
-                  </div>
-                </div>
-              </div>
-
-              <div style="display: flex;">
-                <img style="border-radius: 50px; margin-right: 100px; height: 400px; width: 400px;" alt="" class="hCL"
-                  draggable="true" fetchpriority="high" loading="auto" elementtiming="closeup-image-main-MainPinImage"
-                  src="https://i.pinimg.com/originals/a4/15/54/a415545bb9a81e35d09b2fc184e2e801.gif">
-                <div class="order-1 order-lg-2 col-lg-6" style=" margin-left: 70px;">
-                  <h3 class="react-reveal h3 mb-2"
-                    style="animation-fill-mode: both; animation-duration: 2000ms; animation-delay: 0ms; animation-iteration-count: 1; opacity: 1; animation-name: react-reveal-123745734981279-2;">
-                    Servers &amp; Tools</h3>
-                  <div class="react-reveal d-flex justify-content-center flex-wrap mb-2"
-                    style="animation-fill-mode: both; animation-duration: 2000ms; animation-delay: 0ms; animation-iteration-count: 1; opacity: 1; animation-name: react-reveal-123745734981279-2;">
-                    <div class="icon icon-lg icon-shape shadow-sm rounded-circle m-1" id="Github"><svg
-                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
-                        role="img" data-inline="false" class="iconify iconify--akar-icons" width="1em" height="1em"
-                        viewBox="0 0 24 24">
-                        <g fill="none">
-                          <g clip-path="url(#iconifyReact4)">
-                            <path fill="currentColor" fill-rule="evenodd"
-                              d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385c.6.105.825-.255.825-.57c0-.285-.015-1.23-.015-2.235c-3.015.555-3.795-.735-4.035-1.41c-.135-.345-.72-1.41-1.23-1.695c-.42-.225-1.02-.78-.015-.795c.945-.015 1.62.87 1.845 1.23c1.08 1.815 2.805 1.305 3.495.99c.105-.78.42-1.305.765-1.605c-2.67-.3-5.46-1.335-5.46-5.925c0-1.305.465-2.385 1.23-3.225c-.12-.3-.54-1.53.12-3.18c0 0 1.005-.315 3.3 1.23c.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23c.66 1.65.24 2.88.12 3.18c.765.84 1.23 1.905 1.23 3.225c0 4.605-2.805 5.625-5.475 5.925c.435.375.81 1.095.81 2.22c0 1.605-.015 2.895-.015 3.3c0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12"
-                              clip-rule="evenodd"></path>
-                          </g>
-                          <defs>
-                            <clipPath id="iconifyReact4">
-                              <path fill="#fff" d="M0 0h24v24H0z"></path>
-                            </clipPath>
-                          </defs>
-                        </g>
-                      </svg></div>
-                    <div class="icon icon-lg icon-shape shadow-sm rounded-circle m-1" id="Docker"><svg
-                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
-                        role="img" data-inline="false" class="iconify iconify--logos" width="1.39em" height="1em"
-                        viewBox="0 0 256 185">
-                        <path fill="#2396ED"
-                          d="M250.716 70.497c-5.765-4-18.976-5.5-29.304-3.5c-1.2-10-6.725-18.749-16.333-26.499l-5.524-4l-3.844 5.75c-4.803 7.5-7.205 18-6.485 28c.24 3.499 1.441 9.749 5.044 15.249c-3.362 2-10.328 4.5-19.455 4.5H1.155l-.48 2c-1.682 9.999-1.682 41.248 18.014 65.247c14.892 18.249 36.99 27.499 66.053 27.499c62.93 0 109.528-30.25 131.386-84.997c8.647.25 27.142 0 36.51-18.75c.24-.5.72-1.5 2.401-5.249l.961-2zM139.986 0h-26.42v24.999h26.42zm0 29.999h-26.42v24.999h26.42zm-31.225 0h-26.42v24.999h26.42zm-31.225 0H51.115v24.999h26.421zM46.311 59.998H19.89v24.999h26.42zm31.225 0H51.115v24.999h26.421zm31.225 0h-26.42v24.999h26.42zm31.226 0h-26.422v24.999h26.422zm31.225 0H144.79v24.999h26.422z">
-                        </path>
-                      </svg></div>
-                    <div class="icon icon-lg icon-shape shadow-sm rounded-circle m-1" id="cPanel"><svg
-                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
-                        role="img" data-inline="false" class="iconify iconify--logos" width="4.5em" height="1em"
-                        viewBox="0 0 512 114">
-                        <path fill="#FF6C2C"
-                          d="M42.327 27.89h31.996l-4.955 18.971q-1.136 3.966-4.247 6.371q-3.116 2.41-7.22 2.408H43.035q-5.098 0-8.99 2.973q-3.895 2.972-5.451 8.07q-.992 3.822-.212 7.22q.777 3.399 2.76 6.016q1.981 2.622 5.098 4.178c2.074 1.04 4.34 1.556 6.795 1.556h9.06q2.549.001 4.177 2.053q1.627 2.054.92 4.601l-5.662 20.954h-9.91q-10.194 0-18.76-4.46q-8.567-4.458-14.228-11.822Q2.967 89.62.916 80.204q-2.053-9.415.496-19.327l.566-2.123a41.3 41.3 0 0 1 5.733-12.53q3.893-5.733 9.203-9.768t11.822-6.3q6.51-2.265 13.591-2.266m16.139 85.37L86.356 8.779q1.131-3.962 4.248-6.371Q93.714 0 97.824 0h29.59q10.191 0 18.758 4.46q8.564 4.46 14.228 11.821q5.662 7.363 7.787 16.777q2.123 9.417-.567 19.325l-.565 2.124q-1.841 6.795-5.663 12.53q-3.824 5.734-9.132 9.839q-5.311 4.108-11.822 6.37q-6.513 2.267-13.591 2.266h-25.625l5.096-19.113q1.132-3.82 4.248-6.23q3.112-2.405 7.22-2.406h8.212q5.096 0 9.13-3.115q4.036-3.113 5.31-8.07q.99-3.538.213-6.937q-.78-3.397-2.762-6.017q-1.983-2.617-5.096-4.247q-3.116-1.627-6.795-1.628H110.14l-20.67 76.876q-1.136 3.822-4.248 6.229q-3.115 2.408-7.079 2.407zm176.543-55.78l.425-1.558q.283-1.13-.354-1.91q-.638-.779-1.77-.78h-46.012q-2.974 0-5.38-1.274q-2.407-1.274-3.963-3.327q-1.56-2.05-2.124-4.743q-.568-2.687.14-5.521l2.832-10.76h62.294q5.805 0 10.618 2.549t8 6.654q3.185 4.106 4.388 9.414q1.201 5.311-.212 10.973L252.706 98.82q-1.698 6.373-6.866 10.335q-5.168 3.966-11.822 3.965l-46.012-.142q-6.09.001-11.184-2.62q-5.098-2.616-8.354-6.936q-3.256-4.317-4.53-9.91q-1.273-5.592.283-11.398l.567-2.124q.99-3.962 3.326-7.361t5.451-5.805a24.7 24.7 0 0 1 6.937-3.752q3.824-1.344 8.071-1.345h38.65l-2.832 10.619q-1.134 3.822-4.248 6.229t-7.078 2.406h-17.273q-2.407.001-3.114 2.408q-.425 1.56.566 2.76q.99 1.204 2.548 1.203h27.89q1.558 0 2.691-.849q1.13-.849 1.416-2.265l.283-1.133zm82.398-29.59q10.332 0 18.899 4.46q8.564 4.46 14.23 11.822q5.66 7.363 7.714 16.847q2.052 9.488-.636 19.396l-7.079 26.617q-.71 2.831-3.043 4.53q-2.337 1.7-5.17 1.699h-15.289q-2.69.001-4.247-2.053q-1.56-2.052-.85-4.601l8.495-32.138q.99-3.538.212-6.937q-.78-3.398-2.76-6.017q-1.984-2.618-5.097-4.248q-3.117-1.626-6.795-1.627h-15.857L286.4 107.032q-.708 2.831-3.043 4.53q-2.337 1.7-5.31 1.699H262.9q-2.55.001-4.176-2.053q-1.627-2.052-.921-4.601l20.954-78.717zm83.386 26.97q-1.7 1.347-2.407 3.47l-6.37 24.067q-.566 1.984.707 3.681q1.275 1.7 3.399 1.7h58.612l-4.53 16.847q-1.136 3.822-4.248 6.229q-3.116 2.408-7.079 2.407h-53.373q-5.808 0-10.619-2.478q-4.814-2.475-8-6.654q-3.186-4.175-4.387-9.485q-1.203-5.31.353-10.831l8.636-32.138q1.414-5.236 4.389-9.627q2.974-4.387 7.008-7.503q4.034-3.113 9.06-4.885a31.1 31.1 0 0 1 10.407-1.77h37.8q5.805 0 10.618 2.549t8 6.654q3.184 4.107 4.317 9.485q1.132 5.38-.283 10.902l-2.548 9.627q-1.699 6.372-6.866 10.265q-5.17 3.894-11.68 3.893h-42.756l2.832-10.477q.988-3.82 4.105-6.23q3.112-2.405 7.22-2.406h17.273q2.404.001 3.114-2.407l.566-2.124q.424-1.556-.566-2.831q-.992-1.275-2.548-1.274h-26.333q-2.123 0-3.823 1.345m53.797 58.4L483.046 6.37q.707-2.83 3.045-4.6Q488.425 0 491.4 0h15.148q2.688.001 4.318 2.053q1.626 2.054.92 4.601L490.55 85.512q-1.56 6.23-5.026 11.326q-3.47 5.097-8.212 8.707q-4.744 3.611-10.547 5.663q-5.805 2.054-12.175 2.053">
-                        </path>
-                      </svg></div>
-                    <div class="icon icon-lg icon-shape shadow-sm rounded-circle m-1" id="Nginx"><svg
-                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
-                        role="img" data-inline="false" class="iconify iconify--logos" width="0.88em" height="1em"
-                        viewBox="0 0 256 291">
-                        <path fill="#009639"
-                          d="M2.054 218.187c1.32 2.347 3.227 4.108 5.575 5.428l112.962 65.137c4.695 2.787 10.416 2.787 14.964 0l112.963-65.137c4.695-2.64 7.482-7.629 7.482-13.057V80.284c0-5.428-2.787-10.416-7.482-13.056L135.555 2.09c-4.694-2.788-10.416-2.788-14.964 0L7.63 67.228C2.787 69.868 0 74.856 0 80.284v130.42c0 2.642.587 5.136 2.054 7.483">
-                        </path>
-                        <path fill="#FFF"
-                          d="M91.837 195.154a14.463 14.463 0 0 1-14.524 14.524a14.463 14.463 0 0 1-14.523-14.524V95.542c0-7.776 6.895-14.084 16.43-14.084c6.896 0 14.965 2.787 19.806 8.802l4.4 5.282l60.737 72.618V95.835a14.463 14.463 0 0 1 14.524-14.524a14.463 14.463 0 0 1 14.523 14.524v99.613c0 7.775-6.895 14.083-16.43 14.083c-6.896 0-14.965-2.787-19.806-8.802l-65.137-77.754z">
-                        </path>
-                      </svg></div>
-
-
-                  </div>
-                  <div class="react-reveal"
-                    style="animation-fill-mode: both; animation-duration: 2000ms; animation-delay: 0ms; animation-iteration-count: 1; opacity: 1; animation-name: react-reveal-123745734981279-2;">
-                    <p><img alt="⚡" draggable="false"
-                        src="//cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/26a1.png"
-                        style="height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-0.1em"> Experience in working
-                      cPanel &amp; WHM Panel</p>
-                    <p><img alt="⚡" draggable="false"
-                        src="//cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/26a1.png"
-                        style="height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-0.1em"> Experience in working
-                      with
-                      Client Users &amp; Testing Tools like Postman, Insomnia and Jmeter</p>
-                    <p><img alt="⚡" draggable="false"
-                        src="//cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/26a1.png"
-                        style="height:1em;width:1em;margin:0 .05em 0 .1em;vertical-align:-0.1em"> Experience in working
-                      with
-                      Linux and Ngnix Server</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <ul class="list-unstyled">
+              <li><i class="bi bi-arrow-right-short text-primary"></i> Experience of working on multiple Backend Frameworks</li>
+              <li><i class="bi bi-arrow-right-short text-primary"></i> Building API endPoints and ensure the level of safety and quality</li>
+              <li><i class="bi bi-arrow-right-short text-primary"></i> Hosting and maintaining websites on virtual machine instances</li>
+            </ul>
           </div>
-
+          <div class="col-lg-6 order-lg-1">
+            <img src="https://i.pinimg.com/originals/a4/15/54/a415545bb9a81e35d09b2fc184e2e801.gif" class="img-fluid rounded" alt="Backend Development">
+          </div>
         </div>
+
+        <div class="row">
+          <div class="col-lg-6">
+            <h3 class="mb-4">Tools & Technologies</h3>
+            <div class="d-flex flex-wrap mb-4">
+              <div class="skill-icon">
+                <i class="bi bi-git" style="font-size: 1.5rem; color: #f14e32;"></i>
+              </div>
+              <div class="skill-icon">
+                <i class="bi bi-github" style="font-size: 1.5rem; color: #000;"></i>
+              </div>
+              <div class="skill-icon">
+                <i class="bi bi-terminal" style="font-size: 1.5rem; color: #000;"></i>
+              </div>
+              <div class="skill-icon">
+                <i class="bi bi-hdd-rack" style="font-size: 1.5rem; color: #2496ed;"></i>
+              </div>
+            </div>
+            <!-- <ul class="list-unstyled">
+              <li><i class="bi bi-arrow-right-short text-primary"></i> Experience in working with cPanel & WHM Panel</li>
+              <li><i class="bi bi-arrow-right-short text-primary"></i> Experience in working with Client Users & Testing Tools</li>
+              <li><i class="bi bi-arrow-right-short text-primary"></i> Experience in working with Linux and Nginx Server</li>
+            </ul> -->
+          </div>
+          <div class="col-lg-6">
+            <img src="https://camo.githubusercontent.com/edd6a178ee6a4b30c0bf595da631485f25e8a863620e3efe386969cc11e70bc3/68747470733a2f2f7374617469632e7769787374617469632e636f6d2f6d656469612f6262653634325f36323431346535306265663334636532386462316166616266353566313765637e6d76322e676966" class="img-fluid rounded" alt="Tools & Technologies">
+          </div>
+        </div>
+
+      </div>
 
     </section><!-- /Skills Section -->
 
     <!-- Resume Section -->
     <section id="resume" class="resume section">
 
-      <!-- Resume Section -->
-      <section id="resume" class="resume section">
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Resume</h2>
+        <p>
+          I'm Mahran, a committed software engineering student with a passion for creating innovative software
+          solutions to address real-world challenges. My skills include proficiency in PHP, Laravel, HTML, CSS,
+          JavaScript, GraphQL, Git, and SQL, and I am continually expanding my knowledge in web and mobile
+          development. I aspire to become a skilled and impactful software engineer, dedicated to making a difference
+          through technology.
+        </p>
+      </div><!-- End Section Title -->
 
-        <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2>Resume</h2>
-          <p>
-            I’m Mahran, a committed software engineering student with a passion for creating innovative software
-            solutions to address real-world challenges. My skills include proficiency in PHP, Laravel, HTML, CSS,
-            JavaScript, GraphQL, Git, and SQL, and I am continually expanding my knowledge in web and mobile
-            development. I aspire to become a skilled and impactful software engineer, dedicated to making a difference
-            through technology.
-          </p>
+      <div class="container">
 
-        </div><!-- End Section Title -->
+        <div class="row">
 
-        <div class="container">
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="resume-title">Summary</h3>
 
-          <div class="row">
+            <div class="resume-item pb-0">
+              <h4>Mahran Abo Dakka</h4>
+              <p><em>Motivated software engineering student focused on building impactful software solutions. Known
+                  for a proactive approach to learning and hands-on project experience in web and mobile
+                  development.</em></p>
+              <ul>
+                <li>Damascus, Syria</li>
+                <li>+963 938 968 770</li>
+                <li>mhranabwdqt971@gmail.com</li>
+              </ul>
+            </div><!-- End Resume Item -->
 
-            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-              <h3 class="resume-title">Summary</h3>
+            <h3 class="resume-title">Education</h3>
+            <div class="resume-item">
+              <h4>Bachelor of Science in Software Engineering</h4>
+              <h5>Expected Graduation: 2026</h5>
+              <p><em>Damascus, Syria</em></p>
+              <p>A comprehensive education covering essential software engineering principles, coding practices, and a
+                foundation in both front-end and back-end development.</p>
+            </div><!-- End Resume Item -->
 
-              <div class="resume-item pb-0">
-                <h4>Mahran Abo Dakka</h4>
-                <p><em>Motivated software engineering student focused on building impactful software solutions. Known
-                    for a proactive approach to learning and hands-on project experience in web and mobile
-                    development.</em></p>
-                <ul>
-                  <li>Damascus, Syria</li>
-                  <li>+963 938 968 770</li>
-                  <li> mhranabwdqt971@email.com </li>
-                </ul>
-              </div><!-- End Resume Item -->
+          </div>
 
-              <h3 class="resume-title">Education</h3>
-              <div class="resume-item">
-                <h4>Bachelor of Science in Software Engineering</h4>
-                <h5>I'll graduate in 2026</h5>
-                <p><em>Syria, Damascus</em></p>
-                <p>A comprehensive education covering essential software engineering principles, coding practices, and a
-                  foundation in both front-end and back-end development.</p>
-              </div><!-- End Resume Item -->
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <h3 class="resume-title">Professional Experience</h3>
+            <div class="resume-item">
+              <h4>Freelance Web Developer</h4>
+              <h5>3 Years of Experience</h5>
+              <p><em>Freelance</em></p>
+              <ul>
+                <li>Developed and deployed various web applications using PHP, Laravel, and JavaScript frameworks.</li>
+                <li>Worked with clients to identify project requirements and deliver solutions aligned with their
+                  business goals.</li>
+                <li>Enhanced website performance and security for client projects.</li>
+                <li>Implemented responsive designs and optimized user experiences.</li>
+              </ul>
+            </div><!-- End Resume Item -->
 
-            </div>
-
-            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-              <h3 class="resume-title">Professional Experience</h3>
-              <div class="resume-item">
-                <h4>Freelance Web Developer</h4>
-                <h5>3 Years of Experience</h5>
-                <p><em>Freelance</em></p>
-                <ul>
-                  <li>Developed and deployed various web applications using PHP, Laravel, and JavaScript frameworks.
-                  </li>
-                  <li>Worked with clients to identify project requirements and deliver solutions aligned with their
-                    business goals.</li>
-                  <li>Enhanced website performance and security for client projects.</li>
-                </ul>
-              </div><!-- End Resume Item -->
-
-            </div>
+            <div class="resume-item">
+              <h4>Skills & Technologies</h4>
+              <ul>
+                <li><strong>Frontend:</strong> HTML, CSS, JavaScript, React.js, Bootstrap</li>
+                <li><strong>Backend:</strong> PHP, Laravel, GraphQL, SQL</li>
+                <li><strong>Tools:</strong> Git, GitHub, Linux</li>
+                 <!-- cPanel, Nginx, -->
+                <li><strong>Other:</strong> Responsive Design, API Development, Database Management</li>
+              </ul>
+            </div><!-- End Resume Item -->
 
           </div>
 
         </div>
 
-      </section><!-- /Resume Section -->
+      </div>
 
-      <!-- Portfolio Section -->
-      <section id="portfolio" class="portfolio section">
+    </section><!-- /Resume Section -->
 
-        <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2>Portfolio</h2>
-          <p>
-            I am committed to learning and expanding my skill set through diverse projects in web and mobile application
-            development. Here are a few examples of my work, showcasing my dedication to innovation, design, and
-            user-centered solutions.
-          </p>
-        </div><!-- End Section Title -->
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio section">
 
-      </section><!-- /Portfolio Section -->
-
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Portfolio</h2>
+        <p>
+          I am committed to learning and expanding my skill set through diverse projects in web and mobile application
+          development. Here are a few examples of my work, showcasing my dedication to innovation, design, and
+          user-centered solutions.
+        </p>
+      </div><!-- End Section Title -->
 
       <div class="container">
 
-        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+      
 
-          <!-- <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
-            <li data-filter="*" class="filter-active">All</li>
-            <li data-filter=".filter-app">App</li>
-            <li data-filter=".filter-product">Card</li>
-            <li data-filter=".filter-branding">Web</li>
-          </ul>End Portfolio Filters -->
-
-          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-1.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 1</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-1.jpg" title="App 1"
-                  data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i
-                    class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-2.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Product 1</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-2.jpg" title="Product 1"
-                  data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i
-                    class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i
-                    class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-3.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Branding 1</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-3.jpg" title="Branding 1"
-                  data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
-                    class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i
-                    class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-4.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 2</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-4.jpg" title="App 2"
-                  data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i
-                    class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <!-- <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-5.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Product 2</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-5.jpg" title="Product 2" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div> -->
-            <!-- End Portfolio Item -->
-            <!-- 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-6.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Branding 2</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-6.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div>-->
-            <!-- End Portfolio Item -->
-
-            <!-- <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-7.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 3</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-7.jpg" title="App 3" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div> -->
-            <!-- End Portfolio Item -->
-
-            <!-- <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-8.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Product 3</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-8.jpg" title="Product 3" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div> -->
-            <!-- End Portfolio Item -->
-
-            <!-- <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-9.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Branding 3</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-9.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div> -->
-            <!-- End Portfolio Item -->
-
-          </div><!-- End Portfolio Container -->
-
+        <div class="text-center mt-4" data-aos="fade-up" data-aos-delay="400">
+          <a href="https://github.com/mhran971?tab=repositories" target="_blank" class="btn btn-primary">View All Projects on GitHub</a>
         </div>
 
       </div>
@@ -762,7 +495,7 @@
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="service-item item-cyan position-relative">
               <div class="icon">
-                <i class="bi bi-braces"></i>
+                <i class="bi bi-laptop"></i>
               </div>
               <a href="#" class="stretched-link">
                 <h3>Web Development</h3>
@@ -788,7 +521,7 @@
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
             <div class="service-item item-teal position-relative">
               <div class="icon">
-                <i class="bi bi-hdd-network"></i>
+                <i class="bi bi-database"></i>
               </div>
               <a href="#" class="stretched-link">
                 <h3>Database Management</h3>
@@ -843,144 +576,6 @@
 
     </section><!-- /Services Section -->
 
-
-    <!-- Testimonials Section -->
-    <!-- <section id="testimonials" class="testimonials section"> -->
-
-    <!-- Section Title -->
-    <!-- <div class="container section-title" data-aos="fade-up">
-        <h2>Testimonials</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div> -->
-    <!-- End Section Title -->
-
-    <!-- <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="swiper init-swiper">
-          <script type="application/json" class="swiper-config">
-            {
-              "loop": true,
-              "speed": 600,
-              "autoplay": {
-                "delay": 5000
-              },
-              "slidesPerView": "auto",
-              "pagination": {
-                "el": ".swiper-pagination",
-                "type": "bullets",
-                "clickable": true
-              }
-            }
-          </script>
-          <div class="swiper-wrapper">
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <div class="row gy-4 justify-content-center">
-                  <div class="col-lg-6">
-                    <div class="testimonial-content">
-                      <p>
-                        <i class="bi bi-quote quote-icon-left"></i>
-                        <span>Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.</span>
-                        <i class="bi bi-quote quote-icon-right"></i>
-                      </p>
-                      <h3>Saul Goodman</h3>
-                      <h4>Ceo &amp; Founder</h4>
-                      <div class="stars">
-                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-2 text-center">
-                    <img src="assets/img/testimonials/testimonials-1.jpg" class="img-fluid testimonial-img" alt="">
-                  </div>
-                </div>
-              </div>
-            </div><!-- End testimonial item -->
-
-    <!-- <div class="swiper-slide">
-              <div class="testimonial-item">
-                <div class="row gy-4 justify-content-center">
-                  <div class="col-lg-6">
-                    <div class="testimonial-content">
-                      <p>
-                        <i class="bi bi-quote quote-icon-left"></i>
-                        <span>Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.</span>
-                        <i class="bi bi-quote quote-icon-right"></i>
-                      </p>
-                      <h3>Sara Wilsson</h3>
-                      <h4>Designer</h4>
-                      <div class="stars">
-                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-2 text-center">
-                    <img src="assets/img/testimonials/testimonials-2.jpg" class="img-fluid testimonial-img" alt="">
-                  </div>
-                </div>
-              </div>
-            </div><!-- End testimonial item -->
-
-    <!-- <div class="swiper-slide">
-              <div class="testimonial-item">
-                <div class="row gy-4 justify-content-center">
-                  <div class="col-lg-6">
-                    <div class="testimonial-content">
-                      <p>
-                        <i class="bi bi-quote quote-icon-left"></i>
-                        <span>Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.</span>
-                        <i class="bi bi-quote quote-icon-right"></i>
-                      </p>
-                      <h3>Jena Karlis</h3>
-                      <h4>Store Owner</h4>
-                      <div class="stars">
-                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-2 text-center">
-                    <img src="assets/img/testimonials/testimonials-3.jpg" class="img-fluid testimonial-img" alt="">
-                  </div>
-                </div>
-              </div>
-            </div> -->
-    <!-- End testimonial item -->
-
-    <!-- <div class="swiper-slide">
-              <div class="testimonial-item">
-                <div class="row gy-4 justify-content-center">
-                  <div class="col-lg-6">
-                    <div class="testimonial-content">
-                      <p>
-                        <i class="bi bi-quote quote-icon-left"></i>
-                        <span>Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.</span>
-                        <i class="bi bi-quote quote-icon-right"></i>
-                      </p>
-                      <h3>John Larson</h3>
-                      <h4>Entrepreneur</h4>
-                      <div class="stars">
-                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-2 text-center">
-                    <img src="assets/img/testimonials/testimonials-4.jpg" class="img-fluid testimonial-img" alt="">
-                  </div>
-                </div>
-              </div>
-            </div>  -->
-    <!-- End testimonial item -->
-
-    </div>
-    <div class="swiper-pagination"></div>
-    </div>
-
-    </div>
-
-    </section> -->
-    <!-- /Testimonials Section -->
-
     <!-- Contact Section -->
     <section id="contact" class="contact section">
 
@@ -988,7 +583,7 @@
       <div class="container section-title" data-aos="fade-up">
         <h2>Contact</h2>
         <p>If you're interested in collaborating, discussing a project, or simply want to connect, feel free to reach
-          out. I’d love to hear from you!</p>
+          out. I'd love to hear from you!</p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade" data-aos-delay="100">
@@ -996,33 +591,47 @@
         <div class="row gy-4">
 
           <div class="col-lg-4">
-            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+            <div class="contact-info-item d-flex" data-aos="fade-up" data-aos-delay="200">
               <i class="bi bi-geo-alt flex-shrink-0"></i>
               <div>
-                <h3>Address</h3>
-                <p>Damascus, Syria</p> <!-- Update with your actual city and country -->
+                <h3>Location</h3>
+                <p>Damascus, Syria</p>
               </div>
             </div><!-- End Info Item -->
 
-            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+            <div class="contact-info-item d-flex" data-aos="fade-up" data-aos-delay="300">
               <i class="bi bi-telephone flex-shrink-0"></i>
               <div>
                 <h3>Call Me</h3>
-                <p>+963 938 968 770</p> <!-- Update with your actual phone number -->
+                <p>+963 938 968 770</p>
               </div>
             </div><!-- End Info Item -->
 
-            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+            <div class="contact-info-item d-flex" data-aos="fade-up" data-aos-delay="400">
               <i class="bi bi-envelope flex-shrink-0"></i>
               <div>
                 <h3>Email Me</h3>
-                <p>mhranabwdqt971@email.com
-                </p> <!-- Update with your actual email -->
+                <p>mhranabwdqt971@gmail.com</p>
+              </div>
+            </div><!-- End Info Item -->
+
+            <div class="contact-info-item d-flex" data-aos="fade-up" data-aos-delay="500">
+              <i class="bi bi-linkedin flex-shrink-0"></i>
+              <div>
+                <h3>LinkedIn</h3>
+                <p><a href="https://www.linkedin.com/in/mahran-abo-dakka-2b6a43267/" target="_blank">linkedin.com/in/mahran-abo-dakka</a></p>
+              </div>
+            </div><!-- End Info Item -->
+
+            <div class="contact-info-item d-flex" data-aos="fade-up" data-aos-delay="600">
+              <i class="bi bi-github flex-shrink-0"></i>
+              <div>
+                <h3>GitHub</h3>
+                <p><a href="https://github.com/mhran971" target="_blank">github.com/mhran971</a></p>
               </div>
             </div><!-- End Info Item -->
 
           </div>
-
 
           <div class="col-lg-8">
             <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up"
@@ -1061,41 +670,32 @@
 
       </div>
 
-    </section>
-    <!-- /Contact Section -->
+    </section><!-- /Contact Section -->
 
   </main>
 
-  <footer id="footer" class="footer position-relative light-background">
-    <div class="container">
+  <footer id="footer" class="footer position-relative">
+    <div class="container text-center">
       <h3 class="sitename">Mahran Abo Dakka</h3>
       <p>
-        “The mind is like a garden. If you do not take care of it, it will turn into a forest of weeds.”
+        "The mind is like a garden. If you do not take care of it, it will turn into a forest of weeds."
       </p>
       <p
         style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
         "العقل كالحديقة، إذا لم تُعتنَ به، فإنه سيتحول إلى غابة من الأعشاب الضارة." </p>
-      <div class="social-links d-flex justify-content-center">
-        <!-- <a href=""><i class="bi bi-twitter-x"></i></a> -->
-        <a href="https://www.facebook.com/profile.php?id=100011405946037&mibextid=ZbWKwL"><i
+      <div class="social-links d-flex justify-content-center mt-3">
+        <a href="https://www.facebook.com/people/Mahran-Tech/100068321951416/" target="_blank"><i
             class="bi bi-facebook"></i></a>
-        <a href="https://www.instagram.com/mahran_a.d/profilecard/?igsh=d291NnNqZDBqMDZi"><i
+        <a href="https://www.instagram.com/mahrantech/" target="_blank"><i
             class="bi bi-instagram"></i></a>
         <a href="https://github.com/mhran971" target="_blank"><i class="bi bi-github"></i></a>
         <a
-          href="https://www.linkedin.com/in/mahran-abodakka-2b6a43267?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i
+          href="https://www.linkedin.com/in/mahran-abodakka-2b6a43267?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i
             class="bi bi-linkedin"></i></a>
       </div>
-      <div class="container">
+      <div class="container mt-4">
         <div class="copyright">
-          <span>Copyright</span> <strong class="px-1 sitename"></strong> Mahran Abo Dakka <span>all Rights
-            Reserved</span>
-        </div>
-        <div class="credits">
-          <!-- All the links in the footer should remain intact. -->
-          <!-- You can delete the links only if you've purchased the pro version. -->
-          <!-- Licensing information: https://bootstrapmade.com/license/ -->
-          <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+          <span>Copyright</span> <strong class="px-1 sitename">Mahran Abo Dakka</strong> <span>All Rights Reserved</span>
         </div>
       </div>
     </div>
@@ -1122,6 +722,40 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <!-- Custom JS for improvements -->
+  <script>
+    // Initialize Typed.js for the hero section
+    document.addEventListener('DOMContentLoaded', function() {
+      if (document.querySelector('.typed')) {
+        var typed = new Typed('.typed', {
+          strings: ['Software Engineer', 'Web Developer', 'Problem Solver', 'Freelancer'],
+          typeSpeed: 100,
+          backSpeed: 50,
+          backDelay: 2000,
+          loop: true
+        });
+      }
+      
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 70,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+    });
+  </script>
 
 </body>
 
