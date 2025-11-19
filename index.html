@@ -1,762 +1,1407 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Eng. Mahran Abo Dakka | Software Engineer</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title >Eng. Mahran Abo Dakka | Software Engineer</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+    <!-- Favicons -->
+    <link href="assets/img/image.png" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
 
-  <!-- Favicons -->
-  <link href="assets/img/image.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Vendor CSS Files -->
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link
+      href="assets/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+    />
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet">
+    <!-- Main CSS File -->
+    <link href="assets/css/main.css" rel="stylesheet" />
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-  
-  <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
-  
-  <!-- Custom CSS for improvements -->
-  <style>
-    :root {
-      --primary-color: #3498db;
-      --secondary-color: #2c3e50;
-      --accent-color: #e74c3c;
-      --light-color: #ecf0f1;
-      --dark-color: #2c3e50;
-    }
-    
-    .hero {
-      background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
-      color: white;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
-      background-size: cover;
-    }
-    
-    .hero img {
-      filter: brightness(0.7);
-      object-fit: cover;
-    }
-    
-    .section-title h2 {
-      position: relative;
-      padding-bottom: 15px;
-      margin-bottom: 30px;
-    }
-    
-    .section-title h2::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80px;
-      height: 3px;
-      background: var(--primary-color);
-    }
-    
-    .skill-icon {
-      width: 60px;
-      height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      background: white;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      margin: 10px;
-      transition: transform 0.3s ease;
-    }
-    
-    .skill-icon:hover {
-      transform: translateY(-5px);
-    }
-    
-    .portfolio-item {
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
-    }
-    
-    .portfolio-item:hover {
-      transform: translateY(-10px);
-    }
-    
-    .contact-info-item {
-      background: white;
-      border-radius: 10px;
-      padding: 20px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-      margin-bottom: 20px;
-      transition: transform 0.3s ease;
-    }
-    
-    .contact-info-item:hover {
-      transform: translateY(-5px);
-    }
-    
-    .social-links a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: var(--primary-color);
-      color: white;
-      margin: 0 5px;
-      transition: all 0.3s ease;
-    }
-    
-    .social-links a:hover {
-      background: var(--secondary-color);
-      transform: translateY(-3px);
-    }
-    
-    .btn-primary {
-      background: var(--primary-color);
-      border: none;
-      padding: 10px 25px;
-      border-radius: 30px;
-      transition: all 0.3s ease;
-    }
-    
-    .btn-primary:hover {
-      background: var(--secondary-color);
-      transform: translateY(-3px);
-    }
-    
-    .typed-cursor {
-      color: var(--accent-color);
-    }
-    
-    .navmenu a.active {
-      color: var(--primary-color);
-    }
-    
-    .footer {
-      background: var(--secondary-color);
-      color: white;
-    }
-  </style>
+    <!-- Custom CSS for improvements -->
+    <style>
+      :root {
+        --primary-color: #3498db;
+        --secondary-color: #2c3e50;
+        --accent-color: #e74c3c;
+        --light-color: #ecf0f1;
+        --dark-color: #2c3e50;
+      }
 
-  <!-- =======================================================
+      .hero {
+        background: linear-gradient(
+          135deg,
+          var(--secondary-color) 0%,
+          var(--primary-color) 100%
+        );
+        color: white;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+        background-size: cover;
+      }
+
+      .hero img {
+        filter: brightness(0.7);
+        object-fit: cover;
+      }
+
+      .section-title h2 {
+        position: relative;
+        padding-bottom: 15px;
+        margin-bottom: 30px;
+      }
+
+      .section-title h2::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background: var(--primary-color);
+      }
+
+      .skill-icon {
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: white;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        margin: 10px;
+        transition: transform 0.3s ease;
+      }
+
+      .skill-icon:hover {
+        transform: translateY(-5px);
+      }
+
+      .portfolio-item {
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .portfolio-item:hover {
+        transform: translateY(-10px);
+      }
+
+      .contact-info-item {
+        background: white;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        margin-bottom: 20px;
+        transition: transform 0.3s ease;
+      }
+
+      .contact-info-item:hover {
+        transform: translateY(-5px);
+      }
+
+      .social-links a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: var(--primary-color);
+        color: white;
+        margin: 0 5px;
+        transition: all 0.3s ease;
+      }
+
+      .social-links a:hover {
+        background: var(--secondary-color);
+        transform: translateY(-3px);
+      }
+
+      .btn-primary {
+        background: var(--primary-color);
+        border: none;
+        padding: 10px 25px;
+        border-radius: 30px;
+        transition: all 0.3s ease;
+      }
+
+      .btn-primary:hover {
+        background: var(--secondary-color);
+        transform: translateY(-3px);
+      }
+
+      .typed-cursor {
+        color: var(--accent-color);
+      }
+
+      .navmenu a.active {
+        color: var(--primary-color);
+      }
+
+      .footer {
+        background: var(--secondary-color);
+        color: white;
+      }
+    </style>
+
+    <!-- =======================================================
   * Template Name: MyResume
   * Template URL: https://bootstrapmade.com/free-html-bootstrap-template-my-resume/
   * Updated: Jun 29 2024 with Bootstrap v5.3.3
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
-</head>
+  </head>
 
-<body class="index-page">
+  <body class="index-page">
+    <header
+      id="header"
+      class="header d-flex flex-column justify-content-center"
+    >
+      <i class="header-toggle d-xl-none bi bi-list"></i>
 
-  <header id="header" class="header d-flex flex-column justify-content-center">
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li>
+            <a href="#hero" class="active"
+              ><i class="bi bi-house navicon"></i><span>Home</span></a
+            >
+          </li>
+          <li>
+            <a href="#about"
+              ><i class="bi bi-person navicon"></i><span>About</span></a
+            >
+          </li>
+          <li>
+            <a href="#resume"
+              ><i class="bi bi-file-earmark-text navicon"></i
+              ><span>Resume</span></a
+            >
+          </li>
+          <li>
+            <a href="#portfolio"
+              ><i class="bi bi-images navicon"></i><span>Portfolio</span></a
+            >
+          </li>
+          <li>
+            <a href="#services"
+              ><i class="bi bi-hdd-stack navicon"></i><span>Services</span></a
+            >
+          </li>
+          <li>
+            <a href="#contact"
+              ><i class="bi bi-envelope navicon"></i><span>Contact</span></a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
 
-    <i class="header-toggle d-xl-none bi bi-list"></i>
+    <main class="main">
+      <!-- Hero Section -->
+      <section id="hero" class="hero section">
+        <img src="assets/img/head.jpg" alt="Mahran Abo Dakka" />
 
-    <nav id="navmenu" class="navmenu">
-      <ul>
-        <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i><span>Home</span></a></li>
-        <li><a href="#about"><i class="bi bi-person navicon"></i><span>About</span></a></li>
-        <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i><span>Resume</span></a></li>
-        <li><a href="#portfolio"><i class="bi bi-images navicon"></i><span>Portfolio</span></a></li>
-        <li><a href="#services"><i class="bi bi-hdd-stack navicon"></i><span>Services</span></a></li>
-        <li><a href="#contact"><i class="bi bi-envelope navicon"></i><span>Contact</span></a></li>
-      </ul>
-    </nav>
-
-  </header>
-
-  <main class="main">
-
-    <!-- Hero Section -->
-    <section id="hero" class="hero section">
-
-      <img src="assets/img/head.jpg" alt="Mahran Abo Dakka">
-
-      <div class="container" data-aos="zoom-out">
-        <div class="row justify-content-center">
-          <div class="col-lg-9 text-center">
-            <h1 style="color: #ffffff;  ">Mahran Abo Dakka</h1>
-            <p>I'm <span class="typed" data-typed-items="Software Engineer, Web Developer, Problem Solver, Freelancer"></span><span
-                class="typed-cursor typed-cursor--blink" aria-hidden="true">|</span></p>
-            <div class="social-links mt-4 d-flex justify-content-center">
-              <a class="social-links mt-4 d-flex justify-content-center" href="https://www.facebook.com/people/Mahran-Tech/100068321951416/" target="_blank"><i  class="bi bi-facebook"></i></a>
-              <a class="social-links mt-4 d-flex justify-content-center" href="https://www.instagram.com/mahrantech/" target="_blank"><i class="bi bi-instagram"></i></a>
-              <a class="social-links mt-4 d-flex justify-content-center" href="https://www.linkedin.com/in/mahran-abo-dakka-2b6a43267/" target="_blank"><i class="bi bi-linkedin"></i></a>
-              <a class="social-links mt-4 d-flex justify-content-center" href="https://github.com/mhran971" target="_blank"><i class="bi bi-github"></i></a>
-            </div>
-            <div class="mt-4">
-              <a href="#contact" class="btn btn-primary me-3">Get In Touch</a>
-              <a href="#portfolio" class="btn btn-outline-light">View My Work</a>
+        <div class="container" data-aos="zoom-out">
+          <div class="row justify-content-center">
+            <div class="col-lg-9 text-center">
+              <h1 style="color: #ffffff">Mahran Abo Dakka</h1>
+              <p>
+                I'm
+                <span
+                  class="typed"
+                  data-typed-items="Software Engineer, Web Developer, Problem Solver, Freelancer"
+                ></span
+                ><span
+                  class="typed-cursor typed-cursor--blink"
+                  aria-hidden="true"
+                  >|</span
+                >
+              </p>
+              <div class="social-links mt-4 d-flex justify-content-center">
+                <a
+                  class="social-links mt-4 d-flex justify-content-center"
+                  href="https://www.facebook.com/people/Mahran-Tech/100068321951416/"
+                  target="_blank"
+                  ><i class="bi bi-facebook"></i
+                ></a>
+                <a
+                  class="social-links mt-4 d-flex justify-content-center"
+                  href="https://www.instagram.com/mahrantech/"
+                  target="_blank"
+                  ><i class="bi bi-instagram"></i
+                ></a>
+                <a
+                  class="social-links mt-4 d-flex justify-content-center"
+                  href="https://www.linkedin.com/in/mahran-abo-dakka-2b6a43267/"
+                  target="_blank"
+                  ><i class="bi bi-linkedin"></i
+                ></a>
+                <a
+                  class="social-links mt-4 d-flex justify-content-center"
+                  href="https://github.com/mhran971"
+                  target="_blank"
+                  ><i class="bi bi-github"></i
+                ></a>
+              </div>
+              <div class="mt-4">
+                <a href="#contact" class="btn btn-primary me-3">Get In Touch</a>
+                <a href="#portfolio" class="btn btn-outline-light"
+                  >View My Work</a
+                >
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
+      <!-- /Hero Section -->
 
-    </section><!-- /Hero Section -->
+      <!-- About Section -->
+      <section id="about" class="about section">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <h2>About Me</h2>
+          <p>
+            I'm Mahran, a software engineering student passionate about building
+            innovative software solutions that help solve real-world challenges.
+            I work hard to develop my skills in (PHP, Laravel, Html, css,
+            Javascript, graphQL, git,SQL queries), and I always strive to gain
+            more knowledge in web development and mobile applications. I love
+            working on projects that allow me to learn and grow, and I aspire to
+            become an influential software engineer in my field.
+          </p>
+        </div>
+        <!-- End Section Title -->
 
-    <!-- About Section -->
-    <section id="about" class="about section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>About Me</h2>
-        <p>I'm Mahran, a software engineering student passionate about building innovative software solutions that help
-          solve real-world challenges. I work hard to develop my skills in (PHP, Laravel, Html, css, Javascript,
-          graphQL, git,SQL queries), and I always strive to gain more knowledge in web development and mobile
-          applications. I love working on projects that allow me to learn and grow, and I aspire to become an
-          influential software engineer in my field.</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4 justify-content-center">
-          <div class="col-lg-4 text-center">
-            <img src="assets/img/portfolio.jpg" class="img-fluid rounded-circle" alt="Mahran Abo Dakka">
-          </div>
-          <div class="col-lg-8 content">
-            <h2>Freelancer &amp; Web Developer</h2>
-            <div class="row mt-4">
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>1 Jun 2002</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+963 938 968 770</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Damascus, Syria</span></li>
-                </ul>
-              </div>
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>23</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Bachelor's</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>mhranabwdqt971@gmail.com</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
-                </ul>
-              </div>
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <div class="row gy-4 justify-content-center">
+            <div class="col-lg-4 text-center">
+              <img
+                src="assets/img/portfolio.jpg"
+                class="img-fluid rounded-circle"
+                alt="Mahran Abo Dakka"
+              />
             </div>
-            <div class="mt-4">
-              <p>I'm constantly learning and improving my skills to stay up-to-date with the latest technologies and trends in software development. My goal is to create efficient, scalable, and user-friendly solutions that make a positive impact.</p>
+            <div class="col-lg-8 content">
+              <h2>Freelancer &amp; Web Developer</h2>
+              <div class="row mt-4">
+                <div class="col-lg-6">
+                  <ul>
+                    <li>
+                      <i class="bi bi-chevron-right"></i>
+                      <strong>Birthday:</strong> <span>1 Jun 2002</span>
+                    </li>
+                    <li>
+                      <i class="bi bi-chevron-right"></i>
+                      <strong>Phone:</strong> <span>+963 938 968 770</span>
+                    </li>
+                    <li>
+                      <i class="bi bi-chevron-right"></i>
+                      <strong>City:</strong> <span>Damascus, Syria</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-lg-6">
+                  <ul>
+                    <li>
+                      <i class="bi bi-chevron-right"></i> <strong>Age:</strong>
+                      <span>23</span>
+                    </li>
+                    <li>
+                      <i class="bi bi-chevron-right"></i>
+                      <strong>Degree:</strong> <span>Bachelor's</span>
+                    </li>
+                    <li>
+                      <i class="bi bi-chevron-right"></i>
+                      <strong>Email:</strong>
+                      <span>mhranabwdqt971@gmail.com</span>
+                    </li>
+                    <li>
+                      <i class="bi bi-chevron-right"></i>
+                      <strong>Freelance:</strong> <span>Available</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="mt-4">
+                <p>
+                  I'm constantly learning and improving my skills to stay
+                  up-to-date with the latest technologies and trends in software
+                  development. My goal is to create efficient, scalable, and
+                  user-friendly solutions that make a positive impact.
+                </p>
+              </div>
             </div>
           </div>
         </div>
+      </section>
+      <!-- /About Section -->
 
-      </div>
-
-    </section><!-- /About Section -->
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Skills</h2>
-        <p>"I always strive to develop my abilities in modern programming techniques to create effective and innovative solutions."</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row mb-5">
-          <div class="col-lg-6">
-            <h3 class="mb-4">Frontend Development</h3>
-            <div class="d-flex flex-wrap mb-4">
-              <div class="skill-icon">
-                <i class="bi bi-filetype-html" style="font-size: 1.5rem; color: #e44f26;"></i>
-              </div>
-              <div class="skill-icon">
-                <i class="bi bi-filetype-css" style="font-size: 1.5rem; color: #264de4;"></i>
-              </div>
-              <div class="skill-icon">
-                <i class="bi bi-filetype-js" style="font-size: 1.5rem; color: #f7df1e;"></i>
-              </div>
-              <div class="skill-icon">
-                <i class="bi bi-bootstrap" style="font-size: 1.5rem; color: #7952b3;"></i>
-              </div>
-              <div class="skill-icon">
-                <i class="bi bi-react" style="font-size: 1.5rem; color: #61dafb;"></i>
-              </div>
-            </div>
-            <ul class="list-unstyled">
-              <li><i class="bi bi-arrow-right-short text-primary"></i> Building responsive SPAs in React.js & Next.js</li>
-              <li><i class="bi bi-arrow-right-short text-primary"></i> Building Dashboards using React.js</li>
-              <li><i class="bi bi-arrow-right-short text-primary"></i> Dealing with API requests</li>
-            </ul>
-          </div>
-          <div class="col-lg-6">
-            <img src="https://developers.giphy.com/branch/master/static/api-512d36c09662682717108a38bbb5c57d.gif" class="img-fluid rounded" alt="Frontend Development">
-          </div>
+      <!-- Skills Section -->
+      <section id="skills" class="skills section">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Skills</h2>
+          <p>
+            "I always strive to develop my abilities in modern programming
+            techniques to create effective and innovative solutions."
+          </p>
         </div>
+        <!-- End Section Title -->
 
-        <div class="row mb-5">
-          <div class="col-lg-6 order-lg-2">
-            <h3 class="mb-4">Backend Development</h3>
-            <div class="d-flex flex-wrap mb-4">
-              <div class="skill-icon">
-                <i class="bi bi-filetype-php" style="font-size: 1.5rem; color: #777bb4;"></i>
-              </div>
-              <div class="skill-icon">
-                <i class="bi bi-filetype-json" style="font-size: 1.5rem; color: #000;"></i>
-              </div>
-              <div class="skill-icon">
-                <i class="bi bi-database" style="font-size: 1.5rem; color: #336791;"></i>
-              </div>
-              <div class="skill-icon">
-                <i class="bi bi-graph-up" style="font-size: 1.5rem; color: #e10098;"></i>
-              </div>
-            </div>
-            <ul class="list-unstyled">
-              <li><i class="bi bi-arrow-right-short text-primary"></i> Experience of working on multiple Backend Frameworks</li>
-              <li><i class="bi bi-arrow-right-short text-primary"></i> Building API endPoints and ensure the level of safety and quality</li>
-              <li><i class="bi bi-arrow-right-short text-primary"></i> Hosting and maintaining websites on virtual machine instances</li>
-            </ul>
-          </div>
-          <div class="col-lg-6 order-lg-1">
-            <img src="https://i.pinimg.com/originals/a4/15/54/a415545bb9a81e35d09b2fc184e2e801.gif" class="img-fluid rounded" alt="Backend Development">
-          </div>
-        </div>
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <div class="row mb-5">
+            <div class="col-lg-6">
+              <h3 class="mb-4">Frontend Development</h3>
+              <div class="d-flex flex-wrap mb-4">
+                <!-- HTML -->
+                <div
+                  style="
+                    width: 65px;
+                    height: 65px;
+                    border-radius: 14px;
+                    background: #ffffff10;
+                    backdrop-filter: blur(6px);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 8px;
+                    cursor: pointer;
+                    transition: 0.35s;
+                    border: 1px solid #ffffff20;
+                  "
+                  onmouseover="this.style.transform='scale(1.18) rotate(6deg)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.25)'"
+                  onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'"
+                >
+                  <img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+                    style="width: 34px; height: 34px; transition: 0.3s"
+                    onmouseover="this.style.transform='scale(1.25)'"
+                    onmouseout="this.style.transform='scale(1)'"
+                  />
+                </div>
 
-        <div class="row">
-          <div class="col-lg-6">
-            <h3 class="mb-4">Tools & Technologies</h3>
-            <div class="d-flex flex-wrap mb-4">
-              <div class="skill-icon">
-                <i class="bi bi-git" style="font-size: 1.5rem; color: #f14e32;"></i>
+                <!-- CSS -->
+                <div
+                  style="
+                    width: 65px;
+                    height: 65px;
+                    border-radius: 14px;
+                    background: #ffffff10;
+                    backdrop-filter: blur(6px);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 8px;
+                    cursor: pointer;
+                    transition: 0.35s;
+                    border: 1px solid #ffffff20;
+                  "
+                  onmouseover="this.style.transform='scale(1.18) rotate(6deg)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.25)'"
+                  onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'"
+                >
+                  <img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+                    style="width: 34px; height: 34px; transition: 0.3s"
+                    onmouseover="this.style.transform='scale(1.25)'"
+                    onmouseout="this.style.transform='scale(1)'"
+                  />
+                </div>
+
+                <!-- JavaScript -->
+                <div
+                  style="
+                    width: 65px;
+                    height: 65px;
+                    border-radius: 14px;
+                    background: #ffffff10;
+                    backdrop-filter: blur(6px);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 8px;
+                    cursor: pointer;
+                    transition: 0.35s;
+                    border: 1px solid #ffffff20;
+                  "
+                  onmouseover="this.style.transform='scale(1.18) rotate(6deg)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.25)'"
+                  onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'"
+                >
+                  <img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                    style="width: 34px; height: 34px; transition: 0.3s"
+                    onmouseover="this.style.transform='scale(1.25)'"
+                    onmouseout="this.style.transform='scale(1)'"
+                  />
+                </div>
+
+                <!-- TypeScript -->
+                <div
+                  style="
+                    width: 65px;
+                    height: 65px;
+                    border-radius: 14px;
+                    background: #ffffff10;
+                    backdrop-filter: blur(6px);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 8px;
+                    cursor: pointer;
+                    transition: 0.35s;
+                    border: 1px solid #ffffff20;
+                  "
+                  onmouseover="this.style.transform='scale(1.18) rotate(6deg)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.25)'"
+                  onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'"
+                >
+                  <img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+                    style="width: 34px; height: 34px; transition: 0.3s"
+                    onmouseover="this.style.transform='scale(1.25)'"
+                    onmouseout="this.style.transform='scale(1)'"
+                  />
+                </div>
+
+                <!-- Tailwind -->
+                <div
+                  style="
+                    width: 65px;
+                    height: 65px;
+                    border-radius: 14px;
+                    background: #ffffff10;
+                    backdrop-filter: blur(6px);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 8px;
+                    cursor: pointer;
+                    transition: 0.35s;
+                    border: 1px solid #ffffff20;
+                  "
+                  onmouseover="this.style.transform='scale(1.18) rotate(6deg)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.25)'"
+                  onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'"
+                >
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg"
+                    style="width: 34px; height: 34px; transition: 0.3s"
+                    onmouseover="this.style.transform='scale(1.25)'"
+                    onmouseout="this.style.transform='scale(1)'"
+                  />
+                </div>
+
+                <!-- Bootstrap -->
+                <div
+                  style="
+                    width: 65px;
+                    height: 65px;
+                    border-radius: 14px;
+                    background: #ffffff10;
+                    backdrop-filter: blur(6px);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 8px;
+                    cursor: pointer;
+                    transition: 0.35s;
+                    border: 1px solid #ffffff20;
+                  "
+                  onmouseover="this.style.transform='scale(1.18) rotate(6deg)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.25)'"
+                  onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'"
+                >
+                  <img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg"
+                    style="width: 34px; height: 34px; transition: 0.3s"
+                    onmouseover="this.style.transform='scale(1.25)'"
+                    onmouseout="this.style.transform='scale(1)'"
+                  />
+                </div>
+
+                <!-- React -->
+                <div
+                  style="
+                    width: 65px;
+                    height: 65px;
+                    border-radius: 14px;
+                    background: #ffffff10;
+                    backdrop-filter: blur(6px);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 8px;
+                    cursor: pointer;
+                    transition: 0.35s;
+                    border: 1px solid #ffffff20;
+                  "
+                  onmouseover="this.style.transform='scale(1.18) rotate(6deg)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.25)'"
+                  onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'"
+                >
+                  <img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+                    style="width: 34px; height: 34px; transition: 0.3s"
+                    onmouseover="this.style.transform='scale(1.25)'"
+                    onmouseout="this.style.transform='scale(1)'"
+                  />
+                </div>
               </div>
-              <div class="skill-icon">
-                <i class="bi bi-github" style="font-size: 1.5rem; color: #000;"></i>
-              </div>
-              <div class="skill-icon">
-                <i class="bi bi-terminal" style="font-size: 1.5rem; color: #000;"></i>
-              </div>
-              <div class="skill-icon">
-                <i class="bi bi-hdd-rack" style="font-size: 1.5rem; color: #2496ed;"></i>
-              </div>
+
+              <ul class="list-unstyled">
+                <li>
+                  <i class="bi bi-arrow-right-short text-primary"></i> Building
+                  responsive SPAs in React.js
+                </li>
+                <li>
+                  <i class="bi bi-arrow-right-short text-primary"></i> Building
+                  Dashboards using React.js
+                </li>
+                <li>
+                  <i class="bi bi-arrow-right-short text-primary"></i> Dealing
+                  with API requests
+                </li>
+              </ul>
             </div>
-            <!-- <ul class="list-unstyled">
+            <div class="col-lg-6">
+              <img
+                src="https://developers.giphy.com/branch/master/static/api-512d36c09662682717108a38bbb5c57d.gif"
+                class="img-fluid rounded"
+                alt="Frontend Development"
+              />
+            </div>
+          </div>
+
+          <div class="row mb-5">
+            <div class="col-lg-6 order-lg-2">
+              <h3 class="mb-4">Backend Development</h3>
+              <div class="d-flex flex-wrap mb-4">
+                <div
+                  style="
+                    width: 65px;
+                    height: 65px;
+                    border-radius: 14px;
+                    background: #ffffff10;
+                    backdrop-filter: blur(6px);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 8px;
+                    cursor: pointer;
+                    transition: 0.35s;
+                    border: 1px solid #ffffff20;
+                  "
+                  onmouseover="this.style.transform='scale(1.18) rotate(6deg)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.25)'"
+                  onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'"
+                >
+                  <img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg"
+                    style="width: 34px; height: 34px; transition: 0.3s"
+                    onmouseover="this.style.transform='scale(1.25)'"
+                    onmouseout="this.style.transform='scale(1)'"
+                  />
+                </div>
+                <div
+                  style="
+                    width: 65px;
+                    height: 65px;
+                    border-radius: 14px;
+                    background: #ffffff10;
+                    backdrop-filter: blur(6px);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 8px;
+                    cursor: pointer;
+                    transition: 0.35s;
+                    border: 1px solid #ffffff20;
+                  "
+                  onmouseover="this.style.transform='scale(1.18) rotate(6deg)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.25)'"
+                  onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'"
+                >
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/archive/9/9a/20190820171149%21Laravel.svg"
+                    style="width: 34px; height: 34px; transition: 0.3s"
+                    onmouseover="this.style.transform='scale(1.25)'"
+                    onmouseout="this.style.transform='scale(1)'"
+                  />
+                </div>
+
+                <div
+                  style="
+                    width: 65px;
+                    height: 65px;
+                    border-radius: 14px;
+                    background: #ffffff10;
+                    backdrop-filter: blur(6px);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 8px;
+                    cursor: pointer;
+                    transition: 0.35s;
+                    border: 1px solid #ffffff20;
+                  "
+                  onmouseover="this.style.transform='scale(1.18) rotate(6deg)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.25)'"
+                  onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'"
+                >
+                  <img
+                    src="https://indxsproduction.s3.amazonaws.com/blog-posts/16/01K25FN261SWG66KG7VBZTEYCJ.webp"
+                    style="width: 40px; height: 34px; transition: 0.3s"
+                    onmouseover="this.style.transform='scale(1.25)'"
+                    onmouseout="this.style.transform='scale(1)'"
+                  />
+                </div>
+              </div>
+              <ul class="list-unstyled">
+                <li>
+                  <i class="bi bi-arrow-right-short text-primary"></i>
+                  Experience of working on multiple Backend Frameworks
+                </li>
+                <li>
+                  <i class="bi bi-arrow-right-short text-primary"></i> Building
+                  API endPoints and ensure the level of safety and quality
+                </li>
+                <li>
+                  <i class="bi bi-arrow-right-short text-primary"></i> Hosting
+                  and maintaining websites on virtual machine instances
+                </li>
+              </ul>
+            </div>
+            <div class="col-lg-6 order-lg-1">
+              <img
+                src="https://i.pinimg.com/originals/a4/15/54/a415545bb9a81e35d09b2fc184e2e801.gif"
+                class="img-fluid rounded"
+                alt="Backend Development"
+              />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-6">
+              <h3 class="mb-4">Tools & Technologies</h3>
+              <div class="d-flex flex-wrap mb-4">
+                <div
+                  style="
+                    width: 65px;
+                    height: 65px;
+                    border-radius: 14px;
+                    background: #ffffff10;
+                    backdrop-filter: blur(6px);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 8px;
+                    cursor: pointer;
+                    transition: 0.35s;
+                    border: 1px solid #ffffff20;
+                  "
+                  onmouseover="this.style.transform='scale(1.18) rotate(6deg)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.25)'"
+                  onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'"
+                >
+                  <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaWljheH88qcaUyOBSYs7uILchXcKdZosvLg&s"
+                    style="width: 34px; height: 34px; transition: 0.3s"
+                    onmouseover="this.style.transform='scale(1.25)'"
+                    onmouseout="this.style.transform='scale(1)'"
+                  />
+                </div>
+
+                <div
+                  style="
+                    width: 65px;
+                    height: 65px;
+                    border-radius: 14px;
+                    background: #ffffff10;
+                    backdrop-filter: blur(6px);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 8px;
+                    cursor: pointer;
+                    transition: 0.35s;
+                    border: 1px solid #ffffff20;
+                  "
+                  onmouseover="this.style.transform='scale(1.18) rotate(6deg)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.25)'"
+                  onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'"
+                >
+                  <img
+                  src=https://file.aiquickdraw.com/imgcompressed/img/compressed_a6f76de63f813932bd6494e2b08b1a1e.webp
+                  style="width: 50px; height: 44px; transition: 0.3s"
+                  onmouseover="this.style.transform='scale(1.25)'"
+                  onmouseout="this.style.transform='scale(1)'" />
+                </div>
+                <div
+                  style="
+                    width: 65px;
+                    height: 65px;
+                    border-radius: 14px;
+                    background: #ffffff10;
+                    backdrop-filter: blur(6px);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 8px;
+                    cursor: pointer;
+                    transition: 0.35s;
+                    border: 1px solid #ffffff20;
+                  "
+                  onmouseover="this.style.transform='scale(1.18) rotate(6deg)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.25)'"
+                  onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'"
+                >
+                  <img
+                  src=https://upload.wikimedia.org/wikipedia/commons/f/f1/Vitejs-logo.svg
+                  style="width: 40px; height: 34px; transition: 0.3s"
+                  onmouseover="this.style.transform='scale(1.25)'"
+                  onmouseout="this.style.transform='scale(1)'" />
+                </div>
+                <div
+                  style="
+                    width: 65px;
+                    height: 65px;
+                    border-radius: 14px;
+                    background: #ffffff10;
+                    backdrop-filter: blur(6px);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 8px;
+                    cursor: pointer;
+                    transition: 0.35s;
+                    border: 1px solid #ffffff20;
+                  "
+                  onmouseover="this.style.transform='scale(1.18) rotate(6deg)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.25)'"
+                  onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'"
+                >
+                  <img src=https://img.icons8.com/color/1200/npm.jpg
+                  style="width: 40px; height: 34px; transition: 0.3s"
+                  onmouseover="this.style.transform='scale(1.25)'"
+                  onmouseout="this.style.transform='scale(1)'" />
+                </div>
+                <div
+                  style="
+                    width: 65px;
+                    height: 65px;
+                    border-radius: 14px;
+                    background: #ffffff10;
+                    backdrop-filter: blur(6px);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 8px;
+                    cursor: pointer;
+                    transition: 0.35s;
+                    border: 1px solid #ffffff20;
+                  "
+                  onmouseover="this.style.transform='scale(1.18) rotate(6deg)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.25)'"
+                  onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'"
+                >
+                  <img src=https://cdn.worldvectorlogo.com/logos/xampp.svg
+                  style="width: 40px; height: 34px; transition: 0.3s"
+                  onmouseover="this.style.transform='scale(1.25)'"
+                  onmouseout="this.style.transform='scale(1)'" />
+                </div>
+                <div
+                  style="
+                    width: 65px;
+                    height: 65px;
+                    border-radius: 14px;
+                    background: #ffffff10;
+                    backdrop-filter: blur(6px);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 8px;
+                    cursor: pointer;
+                    transition: 0.35s;
+                    border: 1px solid #ffffff20;
+                  "
+                  onmouseover="this.style.transform='scale(1.18) rotate(6deg)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.25)'"
+                  onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'"
+                >
+                  <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKXf-xZMRVO-B6xuN1L9kM39lVwRbVSdHYSA&s"
+                    style="width: 40px; height: 34px; transition: 0.3s"
+                    onmouseover="this.style.transform='scale(1.25)'"
+                    onmouseout="this.style.transform='scale(1)'"
+                  />
+                </div>
+                <div
+                  style="
+                    width: 65px;
+                    height: 65px;
+                    border-radius: 14px;
+                    background: #ffffff10;
+                    backdrop-filter: blur(6px);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 8px;
+                    cursor: pointer;
+                    transition: 0.35s;
+                    border: 1px solid #ffffff20;
+                  "
+                  onmouseover="this.style.transform='scale(1.18) rotate(6deg)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.25)'"
+                  onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'"
+                >
+                  <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJp2aVq2_yL4lgoL4qbiVocx7nuwpb8DkRVA&s"
+                    style="width: 49px; height: 39px; transition: 0.3s"
+                    onmouseover="this.style.transform='scale(1.25)'"
+                    onmouseout="this.style.transform='scale(1)'"
+                  />
+                </div>
+              </div>
+              <!-- <ul class="list-unstyled">
               <li><i class="bi bi-arrow-right-short text-primary"></i> Experience in working with cPanel & WHM Panel</li>
               <li><i class="bi bi-arrow-right-short text-primary"></i> Experience in working with Client Users & Testing Tools</li>
               <li><i class="bi bi-arrow-right-short text-primary"></i> Experience in working with Linux and Nginx Server</li>
             </ul> -->
+            </div>
+            <div class="col-lg-6">
+              <img
+                src="https://camo.githubusercontent.com/edd6a178ee6a4b30c0bf595da631485f25e8a863620e3efe386969cc11e70bc3/68747470733a2f2f7374617469632e7769787374617469632e636f6d2f6d656469612f6262653634325f36323431346535306265663334636532386462316166616266353566313765637e6d76322e676966"
+                class="img-fluid rounded"
+                alt="Tools & Technologies"
+              />
+            </div>
           </div>
-          <div class="col-lg-6">
-            <img src="https://camo.githubusercontent.com/edd6a178ee6a4b30c0bf595da631485f25e8a863620e3efe386969cc11e70bc3/68747470733a2f2f7374617469632e7769787374617469632e636f6d2f6d656469612f6262653634325f36323431346535306265663334636532386462316166616266353566313765637e6d76322e676966" class="img-fluid rounded" alt="Tools & Technologies">
+        </div>
+      </section>
+      <!-- /Skills Section -->
+
+      <!-- Resume Section -->
+      <section id="resume" class="resume section">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Resume</h2>
+          <p>
+            I'm Mahran, a committed software engineering student with a passion
+            for creating innovative software solutions to address real-world
+            challenges. My skills include proficiency in PHP, Laravel, HTML,
+            CSS, JavaScript, GraphQL, Git, and SQL, and I am continually
+            expanding my knowledge in web and mobile development. I aspire to
+            become a skilled and impactful software engineer, dedicated to
+            making a difference through technology.
+          </p>
+        </div>
+        <!-- End Section Title -->
+
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+              <h3 class="resume-title">Summary</h3>
+
+              <div class="resume-item pb-0">
+                <h4>Mahran Abo Dakka</h4>
+                <p>
+                  <em
+                    >Motivated software engineering student focused on building
+                    impactful software solutions. Known for a proactive approach
+                    to learning and hands-on project experience in web and
+                    mobile development.</em
+                  >
+                </p>
+                <ul>
+                  <li>Damascus, Syria</li>
+                  <li>+963 938 968 770</li>
+                  <li>mhranabwdqt971@gmail.com</li>
+                </ul>
+              </div>
+              <!-- End Resume Item -->
+
+              <h3 class="resume-title">Education</h3>
+              <div class="resume-item">
+                <h4>Bachelor of Science in Software Engineering</h4>
+                <h5>Expected Graduation: 2026</h5>
+                <p><em>Damascus, Syria</em></p>
+                <p>
+                  A comprehensive education covering essential software
+                  engineering principles, coding practices, and a foundation in
+                  both front-end and back-end development.
+                </p>
+              </div>
+              <!-- End Resume Item -->
+            </div>
+
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+              <h3 class="resume-title">Professional Experience</h3>
+              <div class="resume-item">
+                <h4>Freelance Web Developer</h4>
+                <h5>3 Years of Experience</h5>
+                <p><em>Freelance</em></p>
+                <ul>
+                  <li>
+                    Developed and deployed various web applications using PHP,
+                    Laravel, and JavaScript frameworks.
+                  </li>
+                  <li>
+                    Worked with clients to identify project requirements and
+                    deliver solutions aligned with their business goals.
+                  </li>
+                  <li>
+                    Enhanced website performance and security for client
+                    projects.
+                  </li>
+                  <li>
+                    Implemented responsive designs and optimized user
+                    experiences.
+                  </li>
+                </ul>
+              </div>
+              <!-- End Resume Item -->
+
+              <div class="resume-item">
+                <h4>Skills & Technologies</h4>
+                <ul>
+                  <li>
+                    <strong>Frontend:</strong> HTML, CSS, JavaScript, React.js,
+                    Bootstrap
+                  </li>
+                  <li><strong>Backend:</strong> PHP, Laravel, GraphQL, SQL</li>
+                  <li><strong>Tools:</strong> Git, GitHub, Linux</li>
+                  <!-- cPanel, Nginx, -->
+                  <li>
+                    <strong>Other:</strong> Responsive Design, API Development,
+                    Database Management
+                  </li>
+                </ul>
+              </div>
+              <!-- End Resume Item -->
+            </div>
           </div>
         </div>
+      </section>
+      <!-- /Resume Section -->
 
-      </div>
+      <!-- Portfolio Section -->
+      <section id="portfolio" class="portfolio section">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Portfolio</h2>
+          <p>
+            I am committed to learning and expanding my skill set through
+            diverse projects in web and mobile application development. Here are
+            a few examples of my work, showcasing my dedication to innovation,
+            design, and user-centered solutions.
+          </p>
+        </div>
+        <!-- End Section Title -->
 
-    </section><!-- /Skills Section -->
-
-    <!-- Resume Section -->
-    <section id="resume" class="resume section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Resume</h2>
-        <p>
-          I'm Mahran, a committed software engineering student with a passion for creating innovative software
-          solutions to address real-world challenges. My skills include proficiency in PHP, Laravel, HTML, CSS,
-          JavaScript, GraphQL, Git, and SQL, and I am continually expanding my knowledge in web and mobile
-          development. I aspire to become a skilled and impactful software engineer, dedicated to making a difference
-          through technology.
-        </p>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="row">
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <h3 class="resume-title">Summary</h3>
-
-            <div class="resume-item pb-0">
-              <h4>Mahran Abo Dakka</h4>
-              <p><em>Motivated software engineering student focused on building impactful software solutions. Known
-                  for a proactive approach to learning and hands-on project experience in web and mobile
-                  development.</em></p>
-              <ul>
-                <li>Damascus, Syria</li>
-                <li>+963 938 968 770</li>
-                <li>mhranabwdqt971@gmail.com</li>
-              </ul>
-            </div><!-- End Resume Item -->
-
-            <h3 class="resume-title">Education</h3>
-            <div class="resume-item">
-              <h4>Bachelor of Science in Software Engineering</h4>
-              <h5>Expected Graduation: 2026</h5>
-              <p><em>Damascus, Syria</em></p>
-              <p>A comprehensive education covering essential software engineering principles, coding practices, and a
-                foundation in both front-end and back-end development.</p>
-            </div><!-- End Resume Item -->
-
+        <div class="container">
+          <div class="text-center mt-4" data-aos="fade-up" data-aos-delay="400">
+            <a
+              href="https://github.com/mhran971?tab=repositories"
+              target="_blank"
+              class="btn btn-primary"
+              >View All Projects on GitHub</a
+            >
           </div>
+        </div>
+      </section>
+      <!-- /Portfolio Section -->
 
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-            <h3 class="resume-title">Professional Experience</h3>
-            <div class="resume-item">
-              <h4>Freelance Web Developer</h4>
-              <h5>3 Years of Experience</h5>
-              <p><em>Freelance</em></p>
-              <ul>
-                <li>Developed and deployed various web applications using PHP, Laravel, and JavaScript frameworks.</li>
-                <li>Worked with clients to identify project requirements and deliver solutions aligned with their
-                  business goals.</li>
-                <li>Enhanced website performance and security for client projects.</li>
-                <li>Implemented responsive designs and optimized user experiences.</li>
-              </ul>
-            </div><!-- End Resume Item -->
+      <!-- Services Section -->
+      <section id="services" class="services section">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Services</h2>
+          <p>
+            I offer a wide range of development services, harnessing my skills
+            in software engineering to create robust solutions. From backend
+            development to version control and effective communication, I aim to
+            deliver high-quality and efficient solutions tailored to clients'
+            needs.
+          </p>
+        </div>
+        <!-- End Section Title -->
 
-            <div class="resume-item">
-              <h4>Skills & Technologies</h4>
-              <ul>
-                <li><strong>Frontend:</strong> HTML, CSS, JavaScript, React.js, Bootstrap</li>
-                <li><strong>Backend:</strong> PHP, Laravel, GraphQL, SQL</li>
-                <li><strong>Tools:</strong> Git, GitHub, Linux</li>
-                 <!-- cPanel, Nginx, -->
-                <li><strong>Other:</strong> Responsive Design, API Development, Database Management</li>
-              </ul>
-            </div><!-- End Resume Item -->
+        <div class="container">
+          <div class="row gy-4">
+            <div
+              class="col-lg-4 col-md-6"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div class="service-item item-cyan position-relative">
+                <div class="icon">
+                  <i class="bi bi-laptop"></i>
+                </div>
+                <a href="#" class="stretched-link">
+                  <h3>Web Development</h3>
+                </a>
+                <p>
+                  Experienced in PHP, Laravel, HTML, CSS, and JavaScript, I
+                  develop responsive, efficient web applications that deliver
+                  seamless user experiences.
+                </p>
+              </div>
+            </div>
+            <!-- End Service Item -->
 
+            <div
+              class="col-lg-4 col-md-6"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div class="service-item item-orange position-relative">
+                <div class="icon">
+                  <i class="bi bi-phone"></i>
+                </div>
+                <a href="#" class="stretched-link">
+                  <h3>Mobile Development</h3>
+                </a>
+                <p>
+                  Skilled in API back-end for creating cross-platform mobile
+                  apps, providing robust functionality on both iOS and Android
+                  devices.
+                </p>
+              </div>
+            </div>
+            <!-- End Service Item -->
+
+            <div
+              class="col-lg-4 col-md-6"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <div class="service-item item-teal position-relative">
+                <div class="icon">
+                  <i class="bi bi-database"></i>
+                </div>
+                <a href="#" class="stretched-link">
+                  <h3>Database Management</h3>
+                </a>
+                <p>
+                  Proficient in MySQL, I design and maintain databases that
+                  ensure data integrity and support application performance.
+                </p>
+              </div>
+            </div>
+            <!-- End Service Item -->
+
+            <div
+              class="col-lg-4 col-md-6"
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
+              <div class="service-item item-red position-relative">
+                <div class="icon">
+                  <i class="bi bi-git"></i>
+                </div>
+                <a href="#" class="stretched-link">
+                  <h3>Version Control</h3>
+                </a>
+                <p>
+                  With strong Git skills, I manage code versions effectively,
+                  ensuring smooth collaboration and a clear development history.
+                </p>
+              </div>
+            </div>
+            <!-- End Service Item -->
+
+            <div
+              class="col-lg-4 col-md-6"
+              data-aos="fade-up"
+              data-aos-delay="500"
+            >
+              <div class="service-item item-indigo position-relative">
+                <div class="icon">
+                  <i class="bi bi-chat-left-text"></i>
+                </div>
+                <a href="#" class="stretched-link">
+                  <h3>Communication</h3>
+                </a>
+                <p>
+                  Effective communicator, I collaborate with clients and team
+                  members to define goals, ensure clarity, and drive project
+                  success.
+                </p>
+              </div>
+            </div>
+            <!-- End Service Item -->
+
+            <div
+              class="col-lg-4 col-md-6"
+              data-aos="fade-up"
+              data-aos-delay="600"
+            >
+              <div class="service-item item-pink position-relative">
+                <div class="icon">
+                  <i class="bi bi-lightbulb"></i>
+                </div>
+                <a href="#" class="stretched-link">
+                  <h3>Problem Solving</h3>
+                </a>
+                <p>
+                  Utilizing innovative thinking, I analyze and resolve complex
+                  software challenges, optimizing functionality and user
+                  satisfaction.
+                </p>
+              </div>
+            </div>
+            <!-- End Service Item -->
           </div>
-
         </div>
+      </section>
+      <!-- /Services Section -->
 
-      </div>
-
-    </section><!-- /Resume Section -->
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Portfolio</h2>
-        <p>
-          I am committed to learning and expanding my skill set through diverse projects in web and mobile application
-          development. Here are a few examples of my work, showcasing my dedication to innovation, design, and
-          user-centered solutions.
-        </p>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-      
-
-        <div class="text-center mt-4" data-aos="fade-up" data-aos-delay="400">
-          <a href="https://github.com/mhran971?tab=repositories" target="_blank" class="btn btn-primary">View All Projects on GitHub</a>
+      <!-- Contact Section -->
+      <section id="contact" class="contact section">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Contact</h2>
+          <p>
+            If you're interested in collaborating, discussing a project, or
+            simply want to connect, feel free to reach out. I'd love to hear
+            from you!
+          </p>
         </div>
+        <!-- End Section Title -->
 
-      </div>
-
-    </section><!-- /Portfolio Section -->
-
-    <!-- Services Section -->
-    <section id="services" class="services section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Services</h2>
-        <p>I offer a wide range of development services, harnessing my skills in software engineering to create robust
-          solutions. From backend development to version control and effective communication, I aim to deliver
-          high-quality and efficient solutions tailored to clients' needs.</p>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item item-cyan position-relative">
-              <div class="icon">
-                <i class="bi bi-laptop"></i>
-              </div>
-              <a href="#" class="stretched-link">
-                <h3>Web Development</h3>
-              </a>
-              <p>Experienced in PHP, Laravel, HTML, CSS, and JavaScript, I develop responsive, efficient web
-                applications that deliver seamless user experiences.</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-item item-orange position-relative">
-              <div class="icon">
-                <i class="bi bi-phone"></i>
-              </div>
-              <a href="#" class="stretched-link">
-                <h3>Mobile Development</h3>
-              </a>
-              <p>Skilled in API back-end for creating cross-platform mobile apps, providing robust functionality on both
-                iOS and Android devices.</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-item item-teal position-relative">
-              <div class="icon">
-                <i class="bi bi-database"></i>
-              </div>
-              <a href="#" class="stretched-link">
-                <h3>Database Management</h3>
-              </a>
-              <p>Proficient in MySQL, I design and maintain databases that ensure data integrity and support application
-                performance.</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="service-item item-red position-relative">
-              <div class="icon">
-                <i class="bi bi-git"></i>
-              </div>
-              <a href="#" class="stretched-link">
-                <h3>Version Control</h3>
-              </a>
-              <p>With strong Git skills, I manage code versions effectively, ensuring smooth collaboration and a clear
-                development history.</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-            <div class="service-item item-indigo position-relative">
-              <div class="icon">
-                <i class="bi bi-chat-left-text"></i>
-              </div>
-              <a href="#" class="stretched-link">
-                <h3>Communication</h3>
-              </a>
-              <p>Effective communicator, I collaborate with clients and team members to define goals, ensure clarity,
-                and drive project success.</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
-            <div class="service-item item-pink position-relative">
-              <div class="icon">
-                <i class="bi bi-lightbulb"></i>
-              </div>
-              <a href="#" class="stretched-link">
-                <h3>Problem Solving</h3>
-              </a>
-              <p>Utilizing innovative thinking, I analyze and resolve complex software challenges, optimizing
-                functionality and user satisfaction.</p>
-            </div>
-          </div><!-- End Service Item -->
-
-        </div>
-
-      </div>
-
-    </section><!-- /Services Section -->
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Contact</h2>
-        <p>If you're interested in collaborating, discussing a project, or simply want to connect, feel free to reach
-          out. I'd love to hear from you!</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade" data-aos-delay="100">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-4">
-            <div class="contact-info-item d-flex" data-aos="fade-up" data-aos-delay="200">
-              <i class="bi bi-geo-alt flex-shrink-0"></i>
-              <div>
-                <h3>Location</h3>
-                <p>Damascus, Syria</p>
-              </div>
-            </div><!-- End Info Item -->
-
-            <div class="contact-info-item d-flex" data-aos="fade-up" data-aos-delay="300">
-              <i class="bi bi-telephone flex-shrink-0"></i>
-              <div>
-                <h3>Call Me</h3>
-                <p>+963 938 968 770</p>
-              </div>
-            </div><!-- End Info Item -->
-
-            <div class="contact-info-item d-flex" data-aos="fade-up" data-aos-delay="400">
-              <i class="bi bi-envelope flex-shrink-0"></i>
-              <div>
-                <h3>Email Me</h3>
-                <p>mhranabwdqt971@gmail.com</p>
-              </div>
-            </div><!-- End Info Item -->
-
-            <div class="contact-info-item d-flex" data-aos="fade-up" data-aos-delay="500">
-              <i class="bi bi-linkedin flex-shrink-0"></i>
-              <div>
-                <h3>LinkedIn</h3>
-                <p><a href="https://www.linkedin.com/in/mahran-abo-dakka-2b6a43267/" target="_blank">linkedin.com/in/mahran-abo-dakka</a></p>
-              </div>
-            </div><!-- End Info Item -->
-
-            <div class="contact-info-item d-flex" data-aos="fade-up" data-aos-delay="600">
-              <i class="bi bi-github flex-shrink-0"></i>
-              <div>
-                <h3>GitHub</h3>
-                <p><a href="https://github.com/mhran971" target="_blank">github.com/mhran971</a></p>
-              </div>
-            </div><!-- End Info Item -->
-
+        <div class="container py-5">
+  <div class="row gy-5">
+    <!-- Contact Info -->
+    <div class="col-lg-4">
+      <div class="card mb-4 shadow-sm border-0" data-aos="fade-up" data-aos-delay="150">
+        <div class="card-body d-flex align-items-center">
+          <i class="bi bi-geo-alt fs-2 text-primary me-3"></i>
+          <div>
+            <h5 class="card-title mb-1">Location</h5>
+            <p class="card-text mb-0">Damascus, Syria</p>
           </div>
-
-          <div class="col-lg-8">
-            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up"
-              data-aos-delay="200">
-              <div class="row gy-4">
-
-                <div class="col-md-6">
-                  <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
-                </div>
-
-                <div class="col-md-6 ">
-                  <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
-                </div>
-
-                <div class="col-md-12">
-                  <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
-                </div>
-
-                <div class="col-md-12">
-                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
-                </div>
-
-                <div class="col-md-12 text-center">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                  <button type="submit">Send Message</button>
-                </div>
-
-              </div>
-            </form>
-          </div><!-- End Contact Form -->
-
         </div>
-
       </div>
 
-    </section><!-- /Contact Section -->
 
-  </main>
-
-  <footer id="footer" class="footer position-relative">
-    <div class="container text-center">
-      <h3 class="sitename">Mahran Abo Dakka</h3>
-      <p>
-        "The mind is like a garden. If you do not take care of it, it will turn into a forest of weeds."
-      </p>
-      <p
-        style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
-        "العقل كالحديقة، إذا لم تُعتنَ به، فإنه سيتحول إلى غابة من الأعشاب الضارة." </p>
-      <div class="social-links d-flex justify-content-center mt-3">
-        <a href="https://www.facebook.com/people/Mahran-Tech/100068321951416/" target="_blank"><i
-            class="bi bi-facebook"></i></a>
-        <a href="https://www.instagram.com/mahrantech/" target="_blank"><i
-            class="bi bi-instagram"></i></a>
-        <a href="https://github.com/mhran971" target="_blank"><i class="bi bi-github"></i></a>
-        <a
-          href="https://www.linkedin.com/in/mahran-abodakka-2b6a43267?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i
-            class="bi bi-linkedin"></i></a>
-      </div>
-      <div class="container mt-4">
-        <div class="copyright">
-          <span>Copyright</span> <strong class="px-1 sitename">Mahran Abo Dakka</strong> <span>All Rights Reserved</span>
-        </div>
+  <div class="card mb-4 shadow-sm border-0" data-aos="fade-up" data-aos-delay="250">
+    <div class="card-body d-flex align-items-center">
+      <i class="bi bi-telephone fs-2 text-success me-3"></i>
+      <div>
+        <h5 class="card-title mb-1">Call Me</h5>
+        <p class="card-text mb-0">+963 938 968 770</p>
       </div>
     </div>
-  </footer>
+  </div>
 
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
+  <div class="card mb-4 shadow-sm border-0" data-aos="fade-up" data-aos-delay="350">
+    <div class="card-body d-flex align-items-center">
+      <i class="bi bi-envelope fs-2 text-danger me-3"></i>
+      <div>
+        <h5 class="card-title mb-1">Email Me</h5>
+        <p class="card-text mb-0">mhranabwdqt971@gmail.com</p>
+      </div>
+    </div>
+  </div>
 
-  <!-- Preloader -->
-  <div id="preloader"></div>
+  <div class="card mb-4 shadow-sm border-0" data-aos="fade-up" data-aos-delay="450">
+    <div class="card-body d-flex align-items-center">
+      <i class="bi bi-linkedin fs-2 text-info me-3"></i>
+      <div>
+        <h5 class="card-title mb-1">LinkedIn</h5>
+        <p class="card-text mb-0"><a href="https://www.linkedin.com/in/mahran-abo-dakka-2b6a43267/" target="_blank" class="text-decoration-none">linkedin.com/in/mahran-abo-dakka</a></p>
+      </div>
+    </div>
+  </div>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <div class="card mb-4 shadow-sm border-0" data-aos="fade-up" data-aos-delay="550">
+    <div class="card-body d-flex align-items-center">
+      <i class="bi bi-github fs-2 text-dark me-3"></i>
+      <div>
+        <h5 class="card-title mb-1">GitHub</h5>
+        <p class="card-text mb-0"><a href="https://github.com/mhran971" target="_blank" class="text-decoration-none">github.com/mhran971</a></p>
+      </div>
+    </div>
+  </div>
+</div>
 
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+<!-- Contact Form -->
+<div class="col-lg-8">
+  <form action="forms/contact.php" method="post" class="p-4 p-md-5 bg-white rounded shadow-sm" data-aos="fade-left" data-aos-delay="150">
+    <div class="row g-3">
+      <div class="col-md-6">
+        <input type="text" name="name" class="form-control form-control-lg" placeholder="Your Name" required>
+      </div>
+      <div class="col-md-6">
+        <input type="email" name="email" class="form-control form-control-lg" placeholder="Your Email" required>
+      </div>
+      <div class="col-12">
+        <input type="text" name="subject" class="form-control form-control-lg" placeholder="Subject" required>
+      </div>
+      <div class="col-12">
+        <textarea name="message" class="form-control form-control-lg" rows="6" placeholder="Message" required></textarea>
+      </div>
+      <div class="col-12 text-center">
+        <div class="loading">Loading...</div>
+        <div class="error-message"></div>
+        <div class="sent-message text-success">Sending message is stopped currently. Sorry!</div>
+        <button type="submit" class="btn btn-primary btn-lg mt-3 px-5">Send Message</button>
+      </div>
+    </div>
+  </form>
+</div>
 
-  <!-- Custom JS for improvements -->
-  <script>
-    // Initialize Typed.js for the hero section
-    document.addEventListener('DOMContentLoaded', function() {
-      if (document.querySelector('.typed')) {
-        var typed = new Typed('.typed', {
-          strings: ['Software Engineer', 'Web Developer', 'Problem Solver', 'Freelancer'],
-          typeSpeed: 100,
-          backSpeed: 50,
-          backDelay: 2000,
-          loop: true
-        });
-      }
-      
-      // Smooth scrolling for navigation links
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-          e.preventDefault();
-          
-          const targetId = this.getAttribute('href');
-          if (targetId === '#') return;
-          
-          const targetElement = document.querySelector(targetId);
-          if (targetElement) {
-            window.scrollTo({
-              top: targetElement.offsetTop - 70,
-              behavior: 'smooth'
-            });
-          }
+
+  </div>
+</div>
+
+<style>
+.card:hover {
+  transform: translateY(-6px);
+  transition: transform 0.3s;
+}
+.btn-primary:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s;
+}
+</style>
+
+      </section>
+      <!-- /Contact Section -->
+    </main>
+
+    <footer id="footer" class="footer position-relative">
+      <div class="container text-center">
+        <h3 class="sitename">Mahran Abo Dakka</h3>
+        <p>
+          "The mind is like a garden. If you do not take care of it, it will
+          turn into a forest of weeds."
+        </p>
+        <p
+          style="
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+              'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+          "
+        >
+          "العقل كالحديقة، إذا لم تُعتنَ به، فإنه سيتحول إلى غابة من الأعشاب
+          الضارة."
+        </p>
+        <div class="social-links d-flex justify-content-center mt-3">
+          <a
+            href="https://www.facebook.com/people/Mahran-Tech/100068321951416/"
+            target="_blank"
+            ><i class="bi bi-facebook"></i
+          ></a>
+          <a href="https://www.instagram.com/mahrantech/" target="_blank"
+            ><i class="bi bi-instagram"></i
+          ></a>
+          <a href="https://github.com/mhran971" target="_blank"
+            ><i class="bi bi-github"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/mahran-abodakka-2b6a43267?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+            target="_blank"
+            ><i class="bi bi-linkedin"></i
+          ></a>
+        </div>
+        <div class="container mt-4">
+          <div class="copyright">
+            <span>Copyright</span>
+            <strong class="px-1 sitename">Mahran Abo Dakka</strong>
+            <span>All Rights Reserved</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll Top -->
+    <a
+      href="#"
+      id="scroll-top"
+      class="scroll-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
+
+    <!-- Preloader -->
+    <div id="preloader"></div>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/typed.js/typed.umd.js"></script>
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Main JS File -->
+    <script src="assets/js/main.js"></script>
+
+    <!-- Custom JS for improvements -->
+    <script>
+      // Initialize Typed.js for the hero section
+      document.addEventListener("DOMContentLoaded", function () {
+        if (document.querySelector(".typed")) {
+          var typed = new Typed(".typed", {
+            strings: [
+              "Software Engineer",
+              "Web Developer",
+              "Problem Solver",
+              "Freelancer",
+            ],
+            typeSpeed: 100,
+            backSpeed: 50,
+            backDelay: 2000,
+            loop: true,
+          });
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            const targetId = this.getAttribute("href");
+            if (targetId === "#") return;
+
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+              window.scrollTo({
+                top: targetElement.offsetTop - 70,
+                behavior: "smooth",
+              });
+            }
+          });
         });
       });
-    });
-  </script>
-
-</body>
-
+    </script>
+  </body>
 </html>
