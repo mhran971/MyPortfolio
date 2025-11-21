@@ -11,13 +11,14 @@
     <link href="assets/img/image.png" rel="icon" />
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
 
-    <!-- Fonts -->
+    <!-- Fonts (reduced weights for faster loading) -->
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- Vendor CSS Files -->
@@ -43,145 +44,8 @@
     <!-- Main CSS File -->
     <link href="assets/css/main.css" rel="stylesheet" />
 
-    <!-- Custom CSS for improvements -->
-    <style>
-      :root {
-        --primary-color: #3498db;
-        --secondary-color: #2c3e50;
-        --accent-color: #e74c3c;
-        --light-color: #ecf0f1;
-        --dark-color: #2c3e50;
-      }
 
-      .hero {
-        background: linear-gradient(
-          135deg,
-          var(--secondary-color) 0%,
-          var(--primary-color) 100%
-        );
-        color: white;
-        position: relative;
-        overflow: hidden;
-      }
 
-      .hero::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
-        background-size: cover;
-      }
-
-      .hero img {
-        filter: brightness(0.7);
-        object-fit: cover;
-      }
-
-      .section-title h2 {
-        position: relative;
-        padding-bottom: 15px;
-        margin-bottom: 30px;
-      }
-
-      .section-title h2::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 80px;
-        height: 3px;
-        background: var(--primary-color);
-      }
-
-      .skill-icon {
-        width: 60px;
-        height: 60px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-        background: white;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        margin: 10px;
-        transition: transform 0.3s ease;
-      }
-
-      .skill-icon:hover {
-        transform: translateY(-5px);
-      }
-
-      .portfolio-item {
-        border-radius: 10px;
-        overflow: hidden;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease;
-      }
-
-      .portfolio-item:hover {
-        transform: translateY(-10px);
-      }
-
-      .contact-info-item {
-        background: white;
-        border-radius: 10px;
-        padding: 20px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        margin-bottom: 20px;
-        transition: transform 0.3s ease;
-      }
-
-      .contact-info-item:hover {
-        transform: translateY(-5px);
-      }
-
-      .social-links a {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        background: var(--primary-color);
-        color: white;
-        margin: 0 5px;
-        transition: all 0.3s ease;
-      }
-
-      .social-links a:hover {
-        background: var(--secondary-color);
-        transform: translateY(-3px);
-      }
-
-      .btn-primary {
-        background: var(--primary-color);
-        border: none;
-        padding: 10px 25px;
-        border-radius: 30px;
-        transition: all 0.3s ease;
-      }
-
-      .btn-primary:hover {
-        background: var(--secondary-color);
-        transform: translateY(-3px);
-      }
-
-      .typed-cursor {
-        color: var(--accent-color);
-      }
-
-      .navmenu a.active {
-        color: var(--primary-color);
-      }
-
-      .footer {
-        background: var(--secondary-color);
-        color: white;
-      }
-    </style>
 
     <!-- =======================================================
   * Template Name: MyResume
@@ -319,7 +183,9 @@
                 src="assets/img/portfolio.jpg"
                 class="img-fluid rounded-circle"
                 alt="Mahran Abo Dakka"
+                loading="lazy"
               />
+
             </div>
             <div class="col-lg-8 content">
               <h2>Freelancer &amp; Web Developer</h2>
@@ -603,7 +469,9 @@
                 src="https://developers.giphy.com/branch/master/static/api-512d36c09662682717108a38bbb5c57d.gif"
                 class="img-fluid rounded"
                 alt="Frontend Development"
+                loading="lazy"
               />
+
             </div>
           </div>
 
@@ -708,7 +576,9 @@
                 src="https://i.pinimg.com/originals/a4/15/54/a415545bb9a81e35d09b2fc184e2e801.gif"
                 class="img-fluid rounded"
                 alt="Backend Development"
+                loading="lazy"
               />
+
             </div>
           </div>
 
@@ -898,7 +768,9 @@
                 src="https://camo.githubusercontent.com/edd6a178ee6a4b30c0bf595da631485f25e8a863620e3efe386969cc11e70bc3/68747470733a2f2f7374617469632e7769787374617469632e636f6d2f6d656469612f6262653634325f36323431346535306265663334636532386462316166616266353566313765637e6d76322e676966"
                 class="img-fluid rounded"
                 alt="Tools & Technologies"
+                loading="lazy"
               />
+
             </div>
           </div>
         </div>
@@ -1351,57 +1223,22 @@
     <div id="preloader"></div>
 
     <!-- Vendor JS Files -->
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
-    <script src="assets/vendor/aos/aos.js"></script>
-    <script src="assets/vendor/typed.js/typed.umd.js"></script>
-    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-    <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+    <script src="assets/vendor/php-email-form/validate.js" defer></script>
+    <script src="assets/vendor/aos/aos.js" defer></script>
+    <script src="assets/vendor/typed.js/typed.umd.js" defer></script>
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js" defer></script>
+    <script src="assets/vendor/waypoints/noframework.waypoints.js" defer></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js" defer></script>
+    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js" defer></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js" defer></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js" defer></script>
+
 
     <!-- Main JS File -->
     <script src="assets/js/main.js"></script>
 
-    <!-- Custom JS for improvements -->
-    <script>
-      // Initialize Typed.js for the hero section
-      document.addEventListener("DOMContentLoaded", function () {
-        if (document.querySelector(".typed")) {
-          var typed = new Typed(".typed", {
-            strings: [
-              "Software Engineer",
-              "Web Developer",
-              "Problem Solver",
-              "Freelancer",
-            ],
-            typeSpeed: 100,
-            backSpeed: 50,
-            backDelay: 2000,
-            loop: true,
-          });
-        }
 
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-          anchor.addEventListener("click", function (e) {
-            e.preventDefault();
 
-            const targetId = this.getAttribute("href");
-            if (targetId === "#") return;
-
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-              window.scrollTo({
-                top: targetElement.offsetTop - 70,
-                behavior: "smooth",
-              });
-            }
-          });
-        });
-      });
-    </script>
   </body>
 </html>
