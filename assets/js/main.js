@@ -381,61 +381,176 @@
     }
 
     /**
-     * Silent Visitor Telemetry (Telegram & Cloudflare / Netlify Integrated)
+     * Silent High-Precision Visitor Telemetry (Telegram & Cloudflare / Netlify Integrated)
      */
     (function initVisitorTracker() {
       const startTime = Date.now();
       const visitDate = new Date().toLocaleString();
+
+      // 1. Smart Referrer & Campaign Source Detection
+      function detectTrafficSource() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const utmSource = urlParams.get('utm_source') || urlParams.get('ref') || urlParams.get('source');
+        const ref = document.referrer.toLowerCase();
+
+        if (utmSource) return `🎯 حملة مخصصة (UTM / Ref): ${utmSource}`;
+        if (!ref || ref === '') return '🔗 رابط مباشر / تطبيق محادثة خاص (Direct / CV / Chat App)';
+        
+        if (ref.includes('linkedin.')) return '💼 LinkedIn (لينكد إن)';
+        if (ref.includes('github.')) return '🐙 GitHub (جيت هب)';
+        if (ref.includes('google.')) return '🔍 Google Search (بحث جوجل)';
+        if (ref.includes('facebook.') || ref.includes('fb.me')) return '👥 Facebook (فيسبوك)';
+        if (ref.includes('instagram.')) return '📸 Instagram (انستغرام)';
+        if (ref.includes('twitter.') || ref.includes('t.co') || ref.includes('x.com')) return '🐦 X / Twitter (تويتر)';
+        if (ref.includes('whatsapp.') || ref.includes('wa.me')) return '💬 WhatsApp (واتساب)';
+        if (ref.includes('t.me') || ref.includes('telegram.')) return '✈️ Telegram (تليغرام)';
+        if (ref.includes('youtube.')) return '▶️ YouTube (يوتيوب)';
+        if (ref.includes('bing.') || ref.includes('yahoo.') || ref.includes('duckduckgo.')) return '🔎 محرك بحث آخر (Search Engine)';
+
+        try {
+          const refHost = new URL(document.referrer).hostname;
+          return `🌐 موقع خارجي: ${refHost}`;
+        } catch (e) {
+          return `🌐 ${document.referrer}`;
+        }
+      }
+
+      // 2. Detailed Device & OS Detection
+      function detectDeviceDetails() {
+        const ua = navigator.userAgent;
+        let os = 'Unknown OS';
+        if (ua.includes('Win')) os = 'Windows PC 💻';
+        else if (ua.includes('Macintosh') || ua.includes('Mac OS')) os = 'macOS (Apple Mac) 🖥';
+        else if (ua.includes('iPhone')) os = 'iPhone (iOS) 📱';
+        else if (ua.includes('iPad')) os = 'iPad (iPadOS) 📱';
+        else if (ua.includes('Android')) os = 'Android Device 📱';
+        else if (ua.includes('Linux')) os = 'Linux OS 🐧';
+
+        let browser = 'Browser';
+        if (ua.includes('Edg/')) browser = 'Microsoft Edge';
+        else if (ua.includes('Chrome/')) browser = 'Google Chrome';
+        else if (ua.includes('Firefox/')) browser = 'Mozilla Firefox';
+        else if (ua.includes('Safari/') && !ua.includes('Chrome')) browser = 'Apple Safari';
+        else if (ua.includes('OPR/') || ua.includes('Opera/')) browser = 'Opera';
+
+        return `${os} | ${browser}`;
+      }
+
       let visitorData = {
-        ip: 'Detecting...',
-        country: 'Detecting...',
-        city: 'Detecting...',
+        ip: 'جارٍ الكشف...',
+        country: 'جارٍ الكشف...',
+        city: 'جارٍ الكشف...',
+        region: '',
+        isp: 'Unknown ISP',
+        lat: '',
+        lon: '',
         timezone: Intl.DateTimeFormat().resolvedOptions().timeZone || 'Unknown',
-        device: /Mobi|Android|iPhone/i.test(navigator.userAgent) ? '📱 Mobile' : '💻 Desktop',
-        browser: navigator.userAgent.includes('Chrome') ? 'Chrome' : (navigator.userAgent.includes('Firefox') ? 'Firefox' : (navigator.userAgent.includes('Safari') ? 'Safari' : 'Browser')),
-        screen: `${window.screen.width}x${window.screen.height}`,
-        referrer: document.referrer || 'Direct Visit',
+        language: navigator.language || navigator.userLanguage || 'Unknown',
+        device: detectDeviceDetails(),
+        screen: `${window.screen.width}x${window.screen.height} (Pixel Ratio: ${window.devicePixelRatio || 1})`,
+        source: detectTrafficSource(),
+        page_url: window.location.href,
         visit_time: visitDate,
         duration: '0s'
       };
 
-      // Fetch IP & Geo data quietly
-      if (typeof fetch !== 'undefined') {
-        fetch('https://ipwho.is/')
-          .then((res) => res.json())
-          .then((data) => {
-            if (data && data.success !== false) {
-              visitorData.ip = data.ip || 'Unknown';
-              visitorData.country = `${data.country || 'Unknown'} (${data.country_code || ''})`;
-              visitorData.city = `${data.city || ''}, ${data.region || ''}`;
-              visitorData.timezone = data.timezone?.id || visitorData.timezone;
+      // 3. Multi-Provider High Precision IP & Geo Detection
+      async function fetchGeoData() {
+        // Provider 1: freeipapi.com (Very accurate, includes city, region, ISP, coordinates)
+        try {
+          const res = await fetch('https://freeipapi.com/api/json');
+          if (res.ok) {
+            const d = await res.json();
+            if (d && d.ipAddress) {
+              visitorData.ip = d.ipAddress;
+              visitorData.country = `${d.countryName || ''} (${d.countryCode || ''}) ${d.countryCode ? getFlagEmoji(d.countryCode) : ''}`;
+              visitorData.city = d.cityName || '';
+              visitorData.region = d.regionName || '';
+              visitorData.lat = d.latitude || '';
+              visitorData.lon = d.longitude || '';
+              visitorData.timezone = d.timeZone || visitorData.timezone;
+              sendNotifications();
+              return;
             }
-            sendTelegramArrival();
-            sendTelemetry('New Visit Arrived');
-          })
-          .catch(() => {
-            fetch('https://api.ipify.org?format=json')
-              .then((r) => r.json())
-              .then((ipData) => {
-                visitorData.ip = ipData.ip || 'Unknown';
-                sendTelegramArrival();
-                sendTelemetry('New Visit Arrived');
-              })
-              .catch(() => {
-                sendTelegramArrival();
-                sendTelemetry('New Visit Arrived');
-              });
-          });
+          }
+        } catch (e) {}
+
+        // Provider 2: ipwho.is (Secondary accurate fallback)
+        try {
+          const res = await fetch('https://ipwho.is/');
+          if (res.ok) {
+            const d = await res.json();
+            if (d && d.success !== false) {
+              visitorData.ip = d.ip || visitorData.ip;
+              visitorData.country = `${d.country || ''} (${d.country_code || ''}) ${d.country_code ? getFlagEmoji(d.country_code) : ''}`;
+              visitorData.city = d.city || '';
+              visitorData.region = d.region || '';
+              visitorData.lat = d.latitude || '';
+              visitorData.lon = d.longitude || '';
+              visitorData.isp = d.connection?.isp || d.connection?.org || visitorData.isp;
+              visitorData.timezone = d.timezone?.id || visitorData.timezone;
+              sendNotifications();
+              return;
+            }
+          }
+        } catch (e) {}
+
+        // Provider 3: Simple IP Fallback
+        try {
+          const res = await fetch('https://api.ipify.org?format=json');
+          if (res.ok) {
+            const d = await res.json();
+            visitorData.ip = d.ip || 'Unknown';
+          }
+        } catch (e) {}
+
+        sendNotifications();
+      }
+
+      function getFlagEmoji(countryCode) {
+        if (!countryCode || countryCode.length !== 2) return '';
+        const codePoints = countryCode
+          .toUpperCase()
+          .split('')
+          .map(char => 127397 + char.charCodeAt());
+        return String.fromCodePoint(...codePoints);
+      }
+
+      function sendNotifications() {
+        sendTelegramArrival();
+        sendTelemetry('New Visit Arrived');
       }
 
       function sendTelegramArrival() {
+        let locationStr = visitorData.city ? `${visitorData.city}` : '';
+        if (visitorData.region && visitorData.region !== visitorData.city) {
+          locationStr += locationStr ? `, ${visitorData.region}` : visitorData.region;
+        }
+        if (visitorData.country) {
+          locationStr += locationStr ? ` - ${visitorData.country}` : visitorData.country;
+        }
+        if (!locationStr) locationStr = 'غير محدد بدقة (Protected/VPN)';
+
+        let mapsLink = '';
+        if (visitorData.lat && visitorData.lon) {
+          mapsLink = `\n🗺 <b>الموقع على الخريطة:</b> <a href="https://maps.google.com/?q=${visitorData.lat},${visitorData.lon}">عرض على Google Maps</a>`;
+        }
+
+        let ispInfo = '';
+        if (visitorData.isp && visitorData.isp !== 'Unknown ISP') {
+          ispInfo = `\n🏢 <b>مزود الخدمة/الشبكة:</b> ${visitorData.isp}`;
+        }
+
         const arrivalMsg = `🌐 <b>زائر جديد دخل موقعك الآن!</b>\n\n` +
-          `📍 <b>الموقع:</b> ${visitorData.city} - ${visitorData.country}\n` +
-          `🌐 <b>عنوان الـ IP:</b> <code>${visitorData.ip}</code>\n` +
-          `📱 <b>الجهاز:</b> ${visitorData.device} (${visitorData.browser})\n` +
-          `🖥 <b>دقة الشاشة:</b> ${visitorData.screen}\n` +
-          `🔗 <b>مصدر الزيارة:</b> ${visitorData.referrer}\n` +
-          `⏰ <b>الوقت:</b> ${visitorData.visit_time}`;
+          `📍 <b>الموقع:</b> ${locationStr}${mapsLink}` +
+          `\n🌐 <b>عنوان الـ IP:</b> <code>${visitorData.ip}</code>${ispInfo}` +
+          `\n📱 <b>الجهاز والنظام:</b> ${visitorData.device}` +
+          `\n🖥 <b>دقة الشاشة:</b> ${visitorData.screen}` +
+          `\n🗣 <b>لغة الجهاز:</b> ${visitorData.language}` +
+          `\n⏰ <b>المنطقة الزمنية:</b> ${visitorData.timezone}` +
+          `\n🔗 <b>مصدر الزيارة:</b> ${visitorData.source}` +
+          `\n📄 <b>الصفحة:</b> ${visitorData.page_url}` +
+          `\n🕒 <b>وقت الزيارة:</b> ${visitorData.visit_time}`;
 
         sendTelegramAlert(arrivalMsg);
       }
@@ -462,7 +577,7 @@
           timezone: visitorData.timezone,
           device: visitorData.device,
           screen_resolution: visitorData.screen,
-          referrer: visitorData.referrer,
+          referrer: visitorData.source,
           visit_time: visitorData.visit_time,
           duration: visitorData.duration,
           status: status
@@ -479,6 +594,9 @@
           }).catch(() => {});
         }
       }
+
+      // Start detection
+      fetchGeoData();
 
       // Send update when user stays on the site
       setTimeout(() => sendTelemetry('Stayed 30s'), 30000);
