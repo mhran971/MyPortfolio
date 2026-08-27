@@ -227,20 +227,30 @@
   window.addEventListener("load", initSwiper);
 
   /**
-   * Correct scrolling position upon page load for URLs containing hash links.
+   * Always start at #hero on initial page load
    */
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+
   window.addEventListener('load', function(e) {
-    if (window.location.hash) {
+    if (window.location.hash && window.location.hash !== '#hero') {
       if (document.querySelector(window.location.hash)) {
         setTimeout(() => {
           let section = document.querySelector(window.location.hash);
-          let scrollMarginTop = getComputedStyle(section).scrollMarginTop;
+          let scrollMarginTop = getComputedStyle(section).scrollMarginTop || '0px';
           window.scrollTo({
             top: section.offsetTop - parseInt(scrollMarginTop),
             behavior: 'smooth'
           });
         }, 100);
       }
+    } else {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'instant'
+      });
     }
   });
 
