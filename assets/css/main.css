@@ -297,7 +297,7 @@ h6 {
 }
 
 .footer p {
-  font-size: 15;
+  font-size: 15px;
   font-style: italic;
   padding: 0;
   margin: 0 0 30px 0;
@@ -1595,3 +1595,220 @@ section,
   background: var(--secondary-color);
   color: white;
 }
+
+/*--------------------------------------------------------------
+# Enhanced Skills & Tech Cards
+--------------------------------------------------------------*/
+.skill-icon-card {
+  width: 68px;
+  height: 68px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 7px;
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  position: relative;
+}
+
+.skill-icon-card:hover {
+  transform: translateY(-5px) scale(1.12);
+  background: rgba(5, 99, 187, 0.15);
+  border-color: rgba(5, 99, 187, 0.5);
+  box-shadow: 0 10px 25px rgba(5, 99, 187, 0.25);
+}
+
+.skill-icon-card img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.skill-icon-card:hover img {
+  transform: scale(1.15);
+}
+
+/*--------------------------------------------------------------
+# Portfolio Projects Showcase
+--------------------------------------------------------------*/
+.portfolio-filters {
+  padding: 0;
+  margin: 0 auto 35px auto;
+  list-style: none;
+  text-align: center;
+}
+
+.portfolio-filters li {
+  cursor: pointer;
+  display: inline-block;
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 4px;
+  border-radius: 50px;
+  transition: all 0.3s ease-in-out;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--default-color);
+}
+
+.portfolio-filters li:hover,
+.portfolio-filters li.filter-active {
+  background: var(--accent-color);
+  color: #ffffff;
+  border-color: var(--accent-color);
+  box-shadow: 0 4px 15px rgba(5, 99, 187, 0.35);
+  transform: translateY(-2px);
+}
+
+.portfolio-card {
+  background: var(--surface-color);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  border-color: rgba(5, 99, 187, 0.35);
+}
+
+.portfolio-card-img {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  background: #111827;
+}
+
+.portfolio-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.portfolio-card:hover .portfolio-card-img img {
+  transform: scale(1.08);
+}
+
+.portfolio-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(5, 99, 187, 0.1) 0%, rgba(10, 25, 47, 0.9) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  opacity: 0;
+  transition: all 0.35s ease;
+}
+
+.portfolio-card:hover .portfolio-card-overlay {
+  opacity: 1;
+}
+
+.portfolio-overlay-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #111827;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.portfolio-overlay-btn:hover {
+  background: var(--accent-color);
+  color: #ffffff;
+  transform: scale(1.15);
+}
+
+.portfolio-card-body {
+  padding: 22px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.portfolio-card-body h4 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--heading-color);
+}
+
+.portfolio-card-body h4 a {
+  color: inherit;
+  transition: color 0.2s;
+}
+
+.portfolio-card-body h4 a:hover {
+  color: var(--accent-color);
+}
+
+.portfolio-card-body p {
+  font-size: 14px;
+  color: color-mix(in srgb, var(--default-color), transparent 25%);
+  margin-bottom: 16px;
+  line-height: 1.6;
+  flex: 1;
+}
+
+.portfolio-tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: auto;
+  margin-bottom: 16px;
+}
+
+.tech-tag {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: rgba(5, 99, 187, 0.08);
+  color: var(--accent-color);
+  border: 1px solid rgba(5, 99, 187, 0.15);
+}
+
+.portfolio-card-actions {
+  display: flex;
+  gap: 10px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.portfolio-card-actions .btn {
+  font-size: 13px;
+  padding: 6px 14px;
+  border-radius: 8px;
+}
+
+/* Contact Cards Modern Touch */
+.contact .card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 14px;
+}
+
+.contact .card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
+}
+
