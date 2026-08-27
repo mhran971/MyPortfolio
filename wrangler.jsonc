@@ -6,16 +6,6 @@
     "enabled": true
   },
   "assets": {
-    "directory": ".",
-    "exclude": [
-      "node_modules/**",
-      "tests/**",
-      ".git/**",
-      ".github/**",
-      "Dockerfile",
-      ".dockerignore",
-      "package.json",
-      "package-lock.json"
-    ]
+    "directory": "."
   }
 }
