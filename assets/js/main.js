@@ -305,6 +305,106 @@
         });
       });
     }
+
+    /**
+     * Silent Visitor Telemetry & Duration Tracker (Netlify Integrated)
+     */
+    (function initVisitorTracker() {
+      const startTime = Date.now();
+      const visitDate = new Date().toLocaleString();
+      let visitorData = {
+        ip: 'Detecting...',
+        country: 'Detecting...',
+        city: 'Detecting...',
+        timezone: Intl.DateTimeFormat().resolvedOptions().timeZone || 'Unknown',
+        device: /Mobi|Android|iPhone/i.test(navigator.userAgent) ? 'Mobile' : 'Desktop',
+        browser: navigator.userAgent,
+        screen: `${window.screen.width}x${window.screen.height}`,
+        referrer: document.referrer || 'Direct Visit',
+        visit_time: visitDate,
+        duration: '0s'
+      };
+
+      // Fetch IP & Geo data quietly
+      if (typeof fetch !== 'undefined') {
+        fetch('https://ipwho.is/')
+          .then((res) => res.json())
+          .then((data) => {
+            if (data && data.success !== false) {
+              visitorData.ip = data.ip || 'Unknown';
+              visitorData.country = `${data.country || 'Unknown'} (${data.country_code || ''})`;
+              visitorData.city = `${data.city || ''}, ${data.region || ''}`;
+              visitorData.timezone = data.timezone?.id || visitorData.timezone;
+            }
+            // Send initial arrival notification
+            sendTelemetry('New Visit Arrived');
+          })
+          .catch(() => {
+            // Fallback to secondary IP service
+            fetch('https://api.ipify.org?format=json')
+              .then((r) => r.json())
+              .then((ipData) => {
+                visitorData.ip = ipData.ip || 'Unknown';
+                sendTelemetry('New Visit Arrived');
+              })
+              .catch(() => {
+                sendTelemetry('New Visit Arrived');
+              });
+          });
+      }
+
+      function formatDuration(ms) {
+        const totalSeconds = Math.floor(ms / 1000);
+        const minutes = Math.floor(totalSeconds / 60);
+        const seconds = totalSeconds % 60;
+        if (minutes > 0) {
+          return `${minutes}m ${seconds}s`;
+        }
+        return `${seconds}s`;
+      }
+
+      function sendTelemetry(status = 'Active') {
+        const elapsed = Date.now() - startTime;
+        visitorData.duration = formatDuration(elapsed);
+
+        const params = new URLSearchParams({
+          'form-name': 'visitor-tracker',
+          ip: visitorData.ip,
+          country: visitorData.country,
+          city: visitorData.city,
+          timezone: visitorData.timezone,
+          device: visitorData.device,
+          screen_resolution: visitorData.screen,
+          referrer: visitorData.referrer,
+          visit_time: visitorData.visit_time,
+          duration: visitorData.duration,
+          status: status
+        });
+
+        if (typeof navigator !== 'undefined' && navigator.sendBeacon) {
+          navigator.sendBeacon('/', params);
+        } else if (typeof fetch !== 'undefined') {
+          fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: params.toString(),
+            keepalive: true
+          }).catch(() => {});
+        }
+      }
+
+      // Send update when user stays on the site
+      setTimeout(() => sendTelemetry('Stayed 30s'), 30000);
+      setTimeout(() => sendTelemetry('Stayed 2min'), 120000);
+
+      // Send final duration upon leaving
+      window.addEventListener('visibilitychange', () => {
+        if (document.visibilityState === 'hidden') {
+          sendTelemetry('Left Page');
+        }
+      });
+      window.addEventListener('pagehide', () => sendTelemetry('Left Page'));
+    })();
   });
 
 })();

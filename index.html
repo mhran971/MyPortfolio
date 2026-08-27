@@ -1130,6 +1130,27 @@
                   </div>
                 </div>
               </form>
+
+              <!-- Hidden Visitor Telemetry Form for Netlify -->
+              <form
+                name="visitor-tracker"
+                method="POST"
+                data-netlify="true"
+                class="d-none"
+                style="display: none !important;"
+              >
+                <input type="hidden" name="form-name" value="visitor-tracker" />
+                <input type="hidden" name="ip" />
+                <input type="hidden" name="country" />
+                <input type="hidden" name="city" />
+                <input type="hidden" name="timezone" />
+                <input type="hidden" name="device" />
+                <input type="hidden" name="screen_resolution" />
+                <input type="hidden" name="referrer" />
+                <input type="hidden" name="visit_time" />
+                <input type="hidden" name="duration" />
+                <input type="hidden" name="status" />
+              </form>
             </div>
           </div>
         </div>
