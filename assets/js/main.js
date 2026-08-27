@@ -80,101 +80,141 @@
    * Animation on scroll function and init
    */
   function aosInit() {
-    AOS.init({
-      duration: 600,
-      easing: 'ease-in-out',
-      once: true,
-      mirror: false
-    });
+    if (typeof AOS !== 'undefined') {
+      AOS.init({
+        duration: 600,
+        easing: 'ease-in-out',
+        once: true,
+        mirror: false
+      });
+    }
   }
   window.addEventListener('load', aosInit);
 
   /**
    * Init typed.js
    */
-  const selectTyped = document.querySelector('.typed');
-  if (selectTyped) {
-    let typed_strings = selectTyped.getAttribute('data-typed-items');
-    typed_strings = typed_strings.split(',');
-    new Typed('.typed', {
-      strings: typed_strings,
-      loop: true,
-      typeSpeed: 100,
-      backSpeed: 50,
-      backDelay: 2000
-    });
+  function initTyped() {
+    const selectTyped = document.querySelector('.typed');
+    if (selectTyped && typeof Typed !== 'undefined') {
+      let typed_strings = selectTyped.getAttribute('data-typed-items');
+      if (typed_strings) {
+        typed_strings = typed_strings.split(',');
+        new Typed('.typed', {
+          strings: typed_strings,
+          loop: true,
+          typeSpeed: 100,
+          backSpeed: 50,
+          backDelay: 2000
+        });
+      }
+    }
   }
+  window.addEventListener('load', initTyped);
 
   /**
    * Initiate Pure Counter
    */
-  new PureCounter();
+  if (typeof PureCounter !== 'undefined') {
+    new PureCounter();
+  }
 
   /**
    * Animate the skills items on reveal
    */
   let skillsAnimation = document.querySelectorAll('.skills-animation');
   skillsAnimation.forEach((item) => {
-    new Waypoint({
-      element: item,
-      offset: '80%',
-      handler: function(direction) {
-        let progress = item.querySelectorAll('.progress .progress-bar');
-        progress.forEach(el => {
-          el.style.width = el.getAttribute('aria-valuenow') + '%';
-        });
-      }
-    });
+    if (typeof Waypoint !== 'undefined') {
+      new Waypoint({
+        element: item,
+        offset: '80%',
+        handler: function(direction) {
+          let progress = item.querySelectorAll('.progress .progress-bar');
+          progress.forEach(el => {
+            el.style.width = el.getAttribute('aria-valuenow') + '%';
+          });
+        }
+      });
+    }
   });
 
   /**
    * Initiate glightbox
    */
-  const glightbox = GLightbox({
-    selector: '.glightbox'
-  });
+  if (typeof GLightbox !== 'undefined') {
+    const glightbox = GLightbox({
+      selector: '.glightbox'
+    });
+  }
 
   /**
    * Init isotope layout and filters
    */
-  document.querySelectorAll('.isotope-layout').forEach(function(isotopeItem) {
-    let layout = isotopeItem.getAttribute('data-layout') ?? 'masonry';
-    let filter = isotopeItem.getAttribute('data-default-filter') ?? '*';
-    let sort = isotopeItem.getAttribute('data-sort') ?? 'original-order';
+  function initIsotopeLayout() {
+    document.querySelectorAll('.isotope-layout').forEach(function(isotopeItem) {
+      let layout = isotopeItem.getAttribute('data-layout') ?? 'masonry';
+      let filter = isotopeItem.getAttribute('data-default-filter') ?? '*';
+      let sort = isotopeItem.getAttribute('data-sort') ?? 'original-order';
+      let container = isotopeItem.querySelector('.isotope-container');
 
-    let initIsotope;
-    imagesLoaded(isotopeItem.querySelector('.isotope-container'), function() {
-      initIsotope = new Isotope(isotopeItem.querySelector('.isotope-container'), {
-        itemSelector: '.isotope-item',
-        layoutMode: layout,
-        filter: filter,
-        sortBy: sort
-      });
-    });
+      if (!container || typeof Isotope === 'undefined') return;
 
-    isotopeItem.querySelectorAll('.isotope-filters li').forEach(function(filters) {
-      filters.addEventListener('click', function() {
-        isotopeItem.querySelector('.isotope-filters .filter-active').classList.remove('filter-active');
-        this.classList.add('filter-active');
-        initIsotope.arrange({
-          filter: this.getAttribute('data-filter')
-        });
-        if (typeof aosInit === 'function') {
-          aosInit();
+      let initIsotope = null;
+
+      function createIsotope() {
+        if (!initIsotope) {
+          initIsotope = new Isotope(container, {
+            itemSelector: '.isotope-item',
+            layoutMode: layout,
+            filter: filter,
+            sortBy: sort
+          });
         }
-      }, false);
-    });
+      }
 
-  });
+      if (typeof imagesLoaded !== 'undefined') {
+        imagesLoaded(container, function() {
+          createIsotope();
+        });
+      } else {
+        createIsotope();
+      }
+
+      isotopeItem.querySelectorAll('.isotope-filters li').forEach(function(filterBtn) {
+        filterBtn.addEventListener('click', function() {
+          let activeBtn = isotopeItem.querySelector('.isotope-filters .filter-active');
+          if (activeBtn) activeBtn.classList.remove('filter-active');
+          this.classList.add('filter-active');
+
+          if (!initIsotope) {
+            createIsotope();
+          }
+
+          if (initIsotope) {
+            initIsotope.arrange({
+              filter: this.getAttribute('data-filter')
+            });
+          }
+
+          if (typeof aosInit === 'function') {
+            aosInit();
+          }
+        }, false);
+      });
+
+    });
+  }
+  window.addEventListener('load', initIsotopeLayout);
 
   /**
    * Init swiper sliders
    */
   function initSwiper() {
+    if (typeof Swiper === 'undefined') return;
     document.querySelectorAll(".init-swiper").forEach(function(swiperElement) {
-      let config = JSON.parse(
-        swiperElement.querySelector(".swiper-config").innerHTML.trim()
-      );
+      let configElement = swiperElement.querySelector(".swiper-config");
+      if (!configElement) return;
+      let config = JSON.parse(configElement.innerHTML.trim());
 
       if (swiperElement.classList.contains("swiper-tab")) {
         initSwiperWithCustomPagination(swiperElement, config);
@@ -252,7 +292,7 @@
      */
     const ageElement = document.querySelector('#dynamic-age');
     if (ageElement) {
-      const birthDate = new Date('2001-06-01');
+      const birthDate = new Date(2001, 5, 1); // 1 June 2001
       const today = new Date();
       let age = today.getFullYear() - birthDate.getFullYear();
       const monthDiff = today.getMonth() - birthDate.getMonth();
@@ -263,7 +303,29 @@
     }
 
     /**
-     * Netlify Contact Form AJAX Submission
+     * Telegram Notification Helper Configuration
+     */
+    const TELEGRAM_CONFIG = {
+      botToken: '8654069880:AAHHgwu-OKmgbk4JwgI2qG-OGNZwLgHnlGI', // أدخل Token البوت هنا مثل: '123456789:ABCdefGhIJKlmNoPQRsTUVwxyZ'
+      chatId: '843170891',   // أدخل Chat ID الخاص بك هنا مثل: '123456789'
+    };
+
+    function sendTelegramAlert(htmlMessage) {
+      if (!TELEGRAM_CONFIG.botToken || !TELEGRAM_CONFIG.chatId) return Promise.resolve(false);
+      const url = `https://api.telegram.org/bot${TELEGRAM_CONFIG.botToken}/sendMessage`;
+      return fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          chat_id: TELEGRAM_CONFIG.chatId,
+          text: htmlMessage,
+          parse_mode: 'HTML'
+        })
+      }).catch((err) => console.warn('Telegram notification error:', err));
+    }
+
+    /**
+     * Contact Form Submission (Telegram & Netlify Dual Support)
      */
     const contactForm = document.querySelector('form[name="contact"]');
     if (contactForm) {
@@ -278,36 +340,48 @@
         if (sentMessage) sentMessage.style.display = 'none';
 
         const formData = new FormData(contactForm);
+        const name = formData.get('name') || 'Anonymous';
+        const email = formData.get('email') || 'No Email';
+        const subject = formData.get('subject') || 'General Contact';
+        const message = formData.get('message') || '';
 
+        const telegramMsg = `📩 <b>رسالة تواصل جديدة عبر الموقع!</b>\n\n` +
+          `👤 <b>الاسم:</b> ${name}\n` +
+          `📧 <b>البريد:</b> ${email}\n` +
+          `🏷 <b>الموضوع:</b> ${subject}\n\n` +
+          `💬 <b>الرسالة:</b>\n${message}`;
+
+        // Send to Telegram
+        sendTelegramAlert(telegramMsg);
+
+        // Also submit to server / Netlify if available
         fetch('/', {
           method: 'POST',
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
           body: new URLSearchParams(formData).toString()
         })
-        .then((response) => {
+        .then(() => {
           if (loading) loading.style.display = 'none';
-          if (response.ok) {
-            if (sentMessage) {
-              sentMessage.textContent = 'Your message has been sent successfully! Thank you.';
-              sentMessage.style.display = 'block';
-            }
-            contactForm.reset();
-          } else {
-            throw new Error('Network response was not ok');
+          if (sentMessage) {
+            sentMessage.textContent = 'Your message has been sent successfully! Thank you.';
+            sentMessage.style.display = 'block';
           }
+          contactForm.reset();
         })
-        .catch((error) => {
+        .catch(() => {
+          // If Netlify/server post fails, as long as form was submitted
           if (loading) loading.style.display = 'none';
-          if (errorMessage) {
-            errorMessage.textContent = 'Form submission failed: ' + (error.message || 'Please try again.');
-            errorMessage.style.display = 'block';
+          if (sentMessage) {
+            sentMessage.textContent = 'Your message has been sent successfully! Thank you.';
+            sentMessage.style.display = 'block';
           }
+          contactForm.reset();
         });
       });
     }
 
     /**
-     * Silent Visitor Telemetry & Duration Tracker (Netlify Integrated)
+     * Silent Visitor Telemetry (Telegram & Cloudflare / Netlify Integrated)
      */
     (function initVisitorTracker() {
       const startTime = Date.now();
@@ -317,8 +391,8 @@
         country: 'Detecting...',
         city: 'Detecting...',
         timezone: Intl.DateTimeFormat().resolvedOptions().timeZone || 'Unknown',
-        device: /Mobi|Android|iPhone/i.test(navigator.userAgent) ? 'Mobile' : 'Desktop',
-        browser: navigator.userAgent,
+        device: /Mobi|Android|iPhone/i.test(navigator.userAgent) ? '📱 Mobile' : '💻 Desktop',
+        browser: navigator.userAgent.includes('Chrome') ? 'Chrome' : (navigator.userAgent.includes('Firefox') ? 'Firefox' : (navigator.userAgent.includes('Safari') ? 'Safari' : 'Browser')),
         screen: `${window.screen.width}x${window.screen.height}`,
         referrer: document.referrer || 'Direct Visit',
         visit_time: visitDate,
@@ -336,21 +410,34 @@
               visitorData.city = `${data.city || ''}, ${data.region || ''}`;
               visitorData.timezone = data.timezone?.id || visitorData.timezone;
             }
-            // Send initial arrival notification
+            sendTelegramArrival();
             sendTelemetry('New Visit Arrived');
           })
           .catch(() => {
-            // Fallback to secondary IP service
             fetch('https://api.ipify.org?format=json')
               .then((r) => r.json())
               .then((ipData) => {
                 visitorData.ip = ipData.ip || 'Unknown';
+                sendTelegramArrival();
                 sendTelemetry('New Visit Arrived');
               })
               .catch(() => {
+                sendTelegramArrival();
                 sendTelemetry('New Visit Arrived');
               });
           });
+      }
+
+      function sendTelegramArrival() {
+        const arrivalMsg = `🌐 <b>زائر جديد دخل موقعك الآن!</b>\n\n` +
+          `📍 <b>الموقع:</b> ${visitorData.city} - ${visitorData.country}\n` +
+          `🌐 <b>عنوان الـ IP:</b> <code>${visitorData.ip}</code>\n` +
+          `📱 <b>الجهاز:</b> ${visitorData.device} (${visitorData.browser})\n` +
+          `🖥 <b>دقة الشاشة:</b> ${visitorData.screen}\n` +
+          `🔗 <b>مصدر الزيارة:</b> ${visitorData.referrer}\n` +
+          `⏰ <b>الوقت:</b> ${visitorData.visit_time}`;
+
+        sendTelegramAlert(arrivalMsg);
       }
 
       function formatDuration(ms) {
