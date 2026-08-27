@@ -227,11 +227,18 @@
   window.addEventListener("load", initSwiper);
 
   /**
-   * Always start at #hero on initial page load
+   * Always start at #hero (top of page) on initial page load
    */
   if ('scrollRestoration' in history) {
     history.scrollRestoration = 'manual';
   }
+  window.scrollTo(0, 0);
+
+  window.addEventListener('DOMContentLoaded', function() {
+    if (!window.location.hash || window.location.hash === '#hero') {
+      window.scrollTo(0, 0);
+    }
+  });
 
   window.addEventListener('load', function(e) {
     if (window.location.hash && window.location.hash !== '#hero') {
@@ -246,11 +253,7 @@
         }, 100);
       }
     } else {
-      window.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: 'instant'
-      });
+      window.scrollTo(0, 0);
     }
   });
 
