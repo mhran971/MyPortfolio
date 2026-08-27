@@ -246,6 +246,65 @@
         }
       });
     });
+
+    /**
+     * Calculate Age dynamically from 2001-06-01
+     */
+    const ageElement = document.querySelector('#dynamic-age');
+    if (ageElement) {
+      const birthDate = new Date('2001-06-01');
+      const today = new Date();
+      let age = today.getFullYear() - birthDate.getFullYear();
+      const monthDiff = today.getMonth() - birthDate.getMonth();
+      if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+      }
+      ageElement.textContent = age;
+    }
+
+    /**
+     * Netlify Contact Form AJAX Submission
+     */
+    const contactForm = document.querySelector('form[name="contact"]');
+    if (contactForm) {
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const loading = contactForm.querySelector('.loading');
+        const errorMessage = contactForm.querySelector('.error-message');
+        const sentMessage = contactForm.querySelector('.sent-message');
+
+        if (loading) loading.style.display = 'block';
+        if (errorMessage) errorMessage.style.display = 'none';
+        if (sentMessage) sentMessage.style.display = 'none';
+
+        const formData = new FormData(contactForm);
+
+        fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(formData).toString()
+        })
+        .then((response) => {
+          if (loading) loading.style.display = 'none';
+          if (response.ok) {
+            if (sentMessage) {
+              sentMessage.textContent = 'Your message has been sent successfully! Thank you.';
+              sentMessage.style.display = 'block';
+            }
+            contactForm.reset();
+          } else {
+            throw new Error('Network response was not ok');
+          }
+        })
+        .catch((error) => {
+          if (loading) loading.style.display = 'none';
+          if (errorMessage) {
+            errorMessage.textContent = 'Form submission failed: ' + (error.message || 'Please try again.');
+            errorMessage.style.display = 'block';
+          }
+        });
+      });
+    }
   });
 
 })();
