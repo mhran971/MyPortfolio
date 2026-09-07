@@ -319,8 +319,8 @@
      * Telegram Notification Helper Configuration
      */
     const TELEGRAM_CONFIG = {
-      botToken: '8654069880:AAHHgwu-OKmgbk4JwgI2qG-OGNZwLgHnlGI', // أدخل Token البوت هنا مثل: '123456789:ABCdefGhIJKlmNoPQRsTUVwxyZ'
-      chatId: '843170891',   // أدخل Chat ID الخاص بك هنا مثل: '123456789'
+      botToken: '', // REMOVED: Do not store secrets in client-side code
+      chatId: '',
     };
 
     function sendTelegramAlert(htmlMessage) {
