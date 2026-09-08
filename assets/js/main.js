@@ -320,7 +320,11 @@
      */
     function sendTelegramAlert(htmlMessage) {
       if (!htmlMessage || typeof fetch === 'undefined') return Promise.resolve(false);
-      return fetch('/api/telegram', {
+      const endpoint = typeof window !== 'undefined' && window.location.hostname.includes('workers.dev')
+        ? '/api/telegram'
+        : 'https://eng-mahranabodakka-myportfolio.mhranabwdqt971.workers.dev/api/telegram';
+
+      return fetch(endpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ text: htmlMessage })
