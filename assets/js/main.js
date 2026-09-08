@@ -316,25 +316,24 @@
     }
 
     /**
-     * Telegram Notification Helper Configuration
+     * Secure Telegram Notification Helper (Proxied via Cloudflare / Netlify Serverless Backend)
      */
-    const TELEGRAM_CONFIG = {
-      botToken: '', // REMOVED: Do not store secrets in client-side code
-      chatId: '',
-    };
-
     function sendTelegramAlert(htmlMessage) {
-      if (!TELEGRAM_CONFIG.botToken || !TELEGRAM_CONFIG.chatId) return Promise.resolve(false);
-      const url = `https://api.telegram.org/bot${TELEGRAM_CONFIG.botToken}/sendMessage`;
-      return fetch(url, {
+      if (!htmlMessage || typeof fetch === 'undefined') return Promise.resolve(false);
+      return fetch('/api/telegram', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          chat_id: TELEGRAM_CONFIG.chatId,
-          text: htmlMessage,
-          parse_mode: 'HTML'
-        })
-      }).catch((err) => console.warn('Telegram notification error:', err));
+        body: JSON.stringify({ text: htmlMessage })
+      })
+      .then(res => {
+        if (!res.ok) {
+          console.warn('Telegram notification API returned status:', res.status);
+        }
+        return res.json().catch(() => ({}));
+      })
+      .catch((err) => {
+        console.warn('Telegram notification error:', err);
+      });
     }
 
     /**

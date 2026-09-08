@@ -35,7 +35,13 @@ function setupDom({ html = baseMarkup(), url = 'https://example.test/' } = {}) {
     swiperCalls: 0
   };
 
-  window.scrollTo = (opts) => spies.scrollCalls.push(opts);
+  window.scrollTo = (opts, y) => {
+    if (typeof opts === 'object' && opts !== null) {
+      spies.scrollCalls.push(opts);
+    } else {
+      spies.scrollCalls.push({ top: y !== undefined ? y : opts, left: opts });
+    }
+  };
 
   Object.defineProperty(window, 'scrollY', {
     value: 0,
@@ -115,6 +121,7 @@ test('scroll top visibility toggles with scroll and click scrolls to top', () =>
   document.dispatchEvent(new window.Event('scroll'));
   assert.equal(scrollTop.classList.contains('active'), false);
 
+  spies.scrollCalls.length = 0;
   scrollTop.dispatchEvent(new window.MouseEvent('click', { bubbles: true }));
   assert.equal(spies.scrollCalls[0].top, 0);
   assert.equal(spies.scrollCalls[0].behavior, 'smooth');
@@ -134,6 +141,7 @@ test('smooth anchor scrolling skips # and scrolls to valid target on DOMContentL
 
   document.dispatchEvent(new window.Event('DOMContentLoaded', { bubbles: true }));
 
+  spies.scrollCalls.length = 0;
   document.querySelector('#skip').dispatchEvent(new window.MouseEvent('click', { bubbles: true }));
   assert.equal(spies.scrollCalls.length, 0);
 
@@ -165,6 +173,7 @@ test('hash-based load scroll and navmenu scrollspy behavior', async () => {
   Object.defineProperty(section2, 'offsetTop', { value: 1000, configurable: true });
   Object.defineProperty(section2, 'offsetHeight', { value: 400, configurable: true });
 
+  spies.scrollCalls.length = 0;
   window.dispatchEvent(new window.Event('load'));
   await new Promise((resolve) => setTimeout(resolve, 130));
 
